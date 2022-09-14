@@ -1,10 +1,10 @@
 // THIS FILE IS GENERATED AUTOMATICALLY AND SHOULD NOT BE EDITED DIRECTLY.
 import 'dart:ffi';
-import 'dart:io';
 import 'package:ffi/ffi.dart';
+import '../dylib.dart';
 import 'struct_glfw3.dart';
 
-final DLL_glfw3 = DynamicLibrary.open(Platform.isWindows ? 'glfw3.dll' : 'libglfw3.so');
+final libglfw3 = dylibOpen('glfw3');
 
 // typedef void (*GLFWglproc)(void)
 typedef GLFWglprocDart = void Function();
@@ -14,83 +14,83 @@ typedef GLFWglproc = Pointer<NativeFunction<Void Function()>>;
 typedef GLFWvkprocDart = void Function();
 typedef GLFWvkproc = Pointer<NativeFunction<Void Function()>>;
 
-// typedef void (* GLFWerrorfun)(int,const char*)
+// typedef void (* GLFWerrorfun)(int error_code, const char* description)
 typedef GLFWerrorfunDart = void Function(int, Pointer<Utf8>?);
 typedef GLFWerrorfun = Pointer<NativeFunction<Void Function(Int32, Pointer<Utf8>?)>>;
 
-// typedef void (* GLFWwindowposfun)(GLFWwindow*,int,int)
+// typedef void (* GLFWwindowposfun)(GLFWwindow* window, int xpos, int ypos)
 typedef GLFWwindowposfunDart = void Function(Pointer<GLFWwindow>?, int, int);
 typedef GLFWwindowposfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32, Int32)>>;
 
-// typedef void (* GLFWwindowsizefun)(GLFWwindow*,int,int)
+// typedef void (* GLFWwindowsizefun)(GLFWwindow* window, int width, int height)
 typedef GLFWwindowsizefunDart = void Function(Pointer<GLFWwindow>?, int, int);
 typedef GLFWwindowsizefun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32, Int32)>>;
 
-// typedef void (* GLFWwindowclosefun)(GLFWwindow*)
+// typedef void (* GLFWwindowclosefun)(GLFWwindow* window)
 typedef GLFWwindowclosefunDart = void Function(Pointer<GLFWwindow>?);
 typedef GLFWwindowclosefun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?)>>;
 
-// typedef void (* GLFWwindowrefreshfun)(GLFWwindow*)
+// typedef void (* GLFWwindowrefreshfun)(GLFWwindow* window)
 typedef GLFWwindowrefreshfunDart = void Function(Pointer<GLFWwindow>?);
 typedef GLFWwindowrefreshfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?)>>;
 
-// typedef void (* GLFWwindowfocusfun)(GLFWwindow*,int)
+// typedef void (* GLFWwindowfocusfun)(GLFWwindow* window, int focused)
 typedef GLFWwindowfocusfunDart = void Function(Pointer<GLFWwindow>?, int);
 typedef GLFWwindowfocusfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32)>>;
 
-// typedef void (* GLFWwindowiconifyfun)(GLFWwindow*,int)
+// typedef void (* GLFWwindowiconifyfun)(GLFWwindow* window, int iconified)
 typedef GLFWwindowiconifyfunDart = void Function(Pointer<GLFWwindow>?, int);
 typedef GLFWwindowiconifyfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32)>>;
 
-// typedef void (* GLFWwindowmaximizefun)(GLFWwindow*,int)
+// typedef void (* GLFWwindowmaximizefun)(GLFWwindow* window, int maximized)
 typedef GLFWwindowmaximizefunDart = void Function(Pointer<GLFWwindow>?, int);
 typedef GLFWwindowmaximizefun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32)>>;
 
-// typedef void (* GLFWframebuffersizefun)(GLFWwindow*,int,int)
+// typedef void (* GLFWframebuffersizefun)(GLFWwindow* window, int width, int height)
 typedef GLFWframebuffersizefunDart = void Function(Pointer<GLFWwindow>?, int, int);
 typedef GLFWframebuffersizefun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32, Int32)>>;
 
-// typedef void (* GLFWwindowcontentscalefun)(GLFWwindow*,float,float)
+// typedef void (* GLFWwindowcontentscalefun)(GLFWwindow* window, float xscale, float yscale)
 typedef GLFWwindowcontentscalefunDart = void Function(Pointer<GLFWwindow>?, double, double);
 typedef GLFWwindowcontentscalefun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Float, Float)>>;
 
-// typedef void (* GLFWmousebuttonfun)(GLFWwindow*,int,int,int)
+// typedef void (* GLFWmousebuttonfun)(GLFWwindow* window, int button, int action, int mods)
 typedef GLFWmousebuttonfunDart = void Function(Pointer<GLFWwindow>?, int, int, int);
 typedef GLFWmousebuttonfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32, Int32, Int32)>>;
 
-// typedef void (* GLFWcursorposfun)(GLFWwindow*,double,double)
+// typedef void (* GLFWcursorposfun)(GLFWwindow* window, double xpos, double ypos)
 typedef GLFWcursorposfunDart = void Function(Pointer<GLFWwindow>?, double, double);
 typedef GLFWcursorposfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Double, Double)>>;
 
-// typedef void (* GLFWcursorenterfun)(GLFWwindow*,int)
+// typedef void (* GLFWcursorenterfun)(GLFWwindow* window, int entered)
 typedef GLFWcursorenterfunDart = void Function(Pointer<GLFWwindow>?, int);
 typedef GLFWcursorenterfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32)>>;
 
-// typedef void (* GLFWscrollfun)(GLFWwindow*,double,double)
+// typedef void (* GLFWscrollfun)(GLFWwindow* window, double xoffset, double yoffset)
 typedef GLFWscrollfunDart = void Function(Pointer<GLFWwindow>?, double, double);
 typedef GLFWscrollfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Double, Double)>>;
 
-// typedef void (* GLFWkeyfun)(GLFWwindow*,int,int,int,int)
+// typedef void (* GLFWkeyfun)(GLFWwindow* window, int key, int scancode, int action, int mods)
 typedef GLFWkeyfunDart = void Function(Pointer<GLFWwindow>?, int, int, int, int);
 typedef GLFWkeyfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32, Int32, Int32, Int32)>>;
 
-// typedef void (* GLFWcharfun)(GLFWwindow*,unsigned int)
+// typedef void (* GLFWcharfun)(GLFWwindow* window, unsigned int codepoint)
 typedef GLFWcharfunDart = void Function(Pointer<GLFWwindow>?, int);
 typedef GLFWcharfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Uint32)>>;
 
-// typedef void (* GLFWcharmodsfun)(GLFWwindow*,unsigned int,int)
+// typedef void (* GLFWcharmodsfun)(GLFWwindow* window, unsigned int codepoint, int mods)
 typedef GLFWcharmodsfunDart = void Function(Pointer<GLFWwindow>?, int, int);
 typedef GLFWcharmodsfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Uint32, Int32)>>;
 
-// typedef void (* GLFWdropfun)(GLFWwindow*,int,const char*[])
+// typedef void (* GLFWdropfun)(GLFWwindow* window, int path_count, const char* paths[])
 typedef GLFWdropfunDart = void Function(Pointer<GLFWwindow>?, int, Pointer<Pointer<Utf8>>?);
 typedef GLFWdropfun = Pointer<NativeFunction<Void Function(Pointer<GLFWwindow>?, Int32, Pointer<Pointer<Utf8>>?)>>;
 
-// typedef void (* GLFWmonitorfun)(GLFWmonitor*,int)
+// typedef void (* GLFWmonitorfun)(GLFWmonitor* monitor, int event)
 typedef GLFWmonitorfunDart = void Function(Pointer<GLFWmonitor>?, int);
 typedef GLFWmonitorfun = Pointer<NativeFunction<Void Function(Pointer<GLFWmonitor>?, Int32)>>;
 
-// typedef void (* GLFWjoystickfun)(int,int)
+// typedef void (* GLFWjoystickfun)(int jid, int event)
 typedef GLFWjoystickfunDart = void Function(int, int);
 typedef GLFWjoystickfun = Pointer<NativeFunction<Void Function(Int32, Int32)>>;
 
@@ -134,7 +134,7 @@ typedef GLFWjoystickfun = Pointer<NativeFunction<Void Function(Int32, Int32)>>;
 /// GLFWAPI int glfwInit(void)
 /// ```
 int glfwInit() {
-  final _glfwInit = DLL_glfw3.lookupFunction<
+  final _glfwInit = libglfw3.lookupFunction<
       Int32 Function(),
       int Function()>('glfwInit');
   return _glfwInit();
@@ -176,7 +176,7 @@ int glfwInit() {
 /// GLFWAPI void glfwTerminate(void)
 /// ```
 void glfwTerminate() {
-  final _glfwTerminate = DLL_glfw3.lookupFunction<
+  final _glfwTerminate = libglfw3.lookupFunction<
       Void Function(),
       void Function()>('glfwTerminate');
   return _glfwTerminate();
@@ -216,7 +216,7 @@ void glfwTerminate() {
 /// GLFWAPI void glfwInitHint(int hint, int value)
 /// ```
 void glfwInitHint(int hint, int value) {
-  final _glfwInitHint = DLL_glfw3.lookupFunction<
+  final _glfwInitHint = libglfw3.lookupFunction<
       Void Function(Int32 hint, Int32 value),
       void Function(int hint, int value)>('glfwInitHint');
   return _glfwInitHint(hint, value);
@@ -251,7 +251,7 @@ void glfwInitHint(int hint, int value) {
 /// GLFWAPI void glfwGetVersion(int* major, int* minor, int* rev)
 /// ```
 void glfwGetVersion(Pointer<Int32>? major, Pointer<Int32>? minor, Pointer<Int32>? rev) {
-  final _glfwGetVersion = DLL_glfw3.lookupFunction<
+  final _glfwGetVersion = libglfw3.lookupFunction<
       Void Function(Pointer<Int32>? major, Pointer<Int32>? minor, Pointer<Int32>? rev),
       void Function(Pointer<Int32>? major, Pointer<Int32>? minor, Pointer<Int32>? rev)>('glfwGetVersion');
   return _glfwGetVersion(major, minor, rev);
@@ -290,7 +290,7 @@ void glfwGetVersion(Pointer<Int32>? major, Pointer<Int32>? minor, Pointer<Int32>
 /// GLFWAPI const char* glfwGetVersionString(void)
 /// ```
 String glfwGetVersionString() {
-  final _glfwGetVersionString = DLL_glfw3.lookupFunction<
+  final _glfwGetVersionString = libglfw3.lookupFunction<
       Pointer<Utf8>? Function(),
       Pointer<Utf8>? Function()>('glfwGetVersionString');
   return _glfwGetVersionString()!.toDartString();
@@ -329,7 +329,7 @@ String glfwGetVersionString() {
 /// GLFWAPI int glfwGetError(const char** description)
 /// ```
 int glfwGetError(Pointer<Pointer<Utf8>>? description) {
-  final _glfwGetError = DLL_glfw3.lookupFunction<
+  final _glfwGetError = libglfw3.lookupFunction<
       Int32 Function(Pointer<Pointer<Utf8>>? description),
       int Function(Pointer<Pointer<Utf8>>? description)>('glfwGetError');
   return _glfwGetError(description);
@@ -383,7 +383,7 @@ int glfwGetError(Pointer<Pointer<Utf8>>? description) {
 /// GLFWAPI GLFWerrorfun glfwSetErrorCallback(GLFWerrorfun callback)
 /// ```
 GLFWerrorfun glfwSetErrorCallback(GLFWerrorfun callback) {
-  final _glfwSetErrorCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetErrorCallback = libglfw3.lookupFunction<
       GLFWerrorfun Function(GLFWerrorfun callback),
       GLFWerrorfun Function(GLFWerrorfun callback)>('glfwSetErrorCallback');
   return _glfwSetErrorCallback(callback);
@@ -420,7 +420,7 @@ GLFWerrorfun glfwSetErrorCallback(GLFWerrorfun callback) {
 /// GLFWAPI GLFWmonitor** glfwGetMonitors(int* count)
 /// ```
 Pointer<Pointer<GLFWmonitor>>? glfwGetMonitors(Pointer<Int32>? count) {
-  final _glfwGetMonitors = DLL_glfw3.lookupFunction<
+  final _glfwGetMonitors = libglfw3.lookupFunction<
       Pointer<Pointer<GLFWmonitor>>? Function(Pointer<Int32>? count),
       Pointer<Pointer<GLFWmonitor>>? Function(Pointer<Int32>? count)>('glfwGetMonitors');
   return _glfwGetMonitors(count);
@@ -452,7 +452,7 @@ Pointer<Pointer<GLFWmonitor>>? glfwGetMonitors(Pointer<Int32>? count) {
 /// GLFWAPI GLFWmonitor* glfwGetPrimaryMonitor(void)
 /// ```
 Pointer<GLFWmonitor>? glfwGetPrimaryMonitor() {
-  final _glfwGetPrimaryMonitor = DLL_glfw3.lookupFunction<
+  final _glfwGetPrimaryMonitor = libglfw3.lookupFunction<
       Pointer<GLFWmonitor>? Function(),
       Pointer<GLFWmonitor>? Function()>('glfwGetPrimaryMonitor');
   return _glfwGetPrimaryMonitor();
@@ -485,7 +485,7 @@ Pointer<GLFWmonitor>? glfwGetPrimaryMonitor() {
 /// GLFWAPI void glfwGetMonitorPos(GLFWmonitor* monitor, int* xpos, int* ypos)
 /// ```
 void glfwGetMonitorPos(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos, Pointer<Int32>? ypos) {
-  final _glfwGetMonitorPos = DLL_glfw3.lookupFunction<
+  final _glfwGetMonitorPos = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos, Pointer<Int32>? ypos),
       void Function(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos, Pointer<Int32>? ypos)>('glfwGetMonitorPos');
   return _glfwGetMonitorPos(monitor, xpos, ypos);
@@ -524,7 +524,7 @@ void glfwGetMonitorPos(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos, Poin
 /// GLFWAPI void glfwGetMonitorWorkarea(GLFWmonitor* monitor, int* xpos, int* ypos, int* width, int* height)
 /// ```
 void glfwGetMonitorWorkarea(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos, Pointer<Int32>? ypos, Pointer<Int32>? width, Pointer<Int32>? height) {
-  final _glfwGetMonitorWorkarea = DLL_glfw3.lookupFunction<
+  final _glfwGetMonitorWorkarea = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos, Pointer<Int32>? ypos, Pointer<Int32>? width, Pointer<Int32>? height),
       void Function(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos, Pointer<Int32>? ypos, Pointer<Int32>? width, Pointer<Int32>? height)>('glfwGetMonitorWorkarea');
   return _glfwGetMonitorWorkarea(monitor, xpos, ypos, width, height);
@@ -551,8 +551,8 @@ void glfwGetMonitorWorkarea(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos,
 /// 
 /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
 /// 
-/// @remark @win32 calculates the returned physical size from the
-/// current resolution and system DPI instead of querying the monitor EDID data.
+/// @remark @win32 On Windows 8 and earlier the physical size is calculated from
+/// the current resolution and system DPI instead of querying the monitor EDID data.
 /// 
 /// @thread_safety This function must only be called from the main thread.
 /// 
@@ -566,7 +566,7 @@ void glfwGetMonitorWorkarea(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? xpos,
 /// GLFWAPI void glfwGetMonitorPhysicalSize(GLFWmonitor* monitor, int* widthMM, int* heightMM)
 /// ```
 void glfwGetMonitorPhysicalSize(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? widthMM, Pointer<Int32>? heightMM) {
-  final _glfwGetMonitorPhysicalSize = DLL_glfw3.lookupFunction<
+  final _glfwGetMonitorPhysicalSize = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? widthMM, Pointer<Int32>? heightMM),
       void Function(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? widthMM, Pointer<Int32>? heightMM)>('glfwGetMonitorPhysicalSize');
   return _glfwGetMonitorPhysicalSize(monitor, widthMM, heightMM);
@@ -606,7 +606,7 @@ void glfwGetMonitorPhysicalSize(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? w
 /// GLFWAPI void glfwGetMonitorContentScale(GLFWmonitor* monitor, float* xscale, float* yscale)
 /// ```
 void glfwGetMonitorContentScale(Pointer<GLFWmonitor>? monitor, Pointer<Float>? xscale, Pointer<Float>? yscale) {
-  final _glfwGetMonitorContentScale = DLL_glfw3.lookupFunction<
+  final _glfwGetMonitorContentScale = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWmonitor>? monitor, Pointer<Float>? xscale, Pointer<Float>? yscale),
       void Function(Pointer<GLFWmonitor>? monitor, Pointer<Float>? xscale, Pointer<Float>? yscale)>('glfwGetMonitorContentScale');
   return _glfwGetMonitorContentScale(monitor, xscale, yscale);
@@ -640,7 +640,7 @@ void glfwGetMonitorContentScale(Pointer<GLFWmonitor>? monitor, Pointer<Float>? x
 /// GLFWAPI const char* glfwGetMonitorName(GLFWmonitor* monitor)
 /// ```
 String glfwGetMonitorName(Pointer<GLFWmonitor>? monitor) {
-  final _glfwGetMonitorName = DLL_glfw3.lookupFunction<
+  final _glfwGetMonitorName = libglfw3.lookupFunction<
       Pointer<Utf8>? Function(Pointer<GLFWmonitor>? monitor),
       Pointer<Utf8>? Function(Pointer<GLFWmonitor>? monitor)>('glfwGetMonitorName');
   return _glfwGetMonitorName(monitor)!.toDartString();
@@ -674,7 +674,7 @@ String glfwGetMonitorName(Pointer<GLFWmonitor>? monitor) {
 /// GLFWAPI void glfwSetMonitorUserPointer(GLFWmonitor* monitor, void* pointer)
 /// ```
 void glfwSetMonitorUserPointer(Pointer<GLFWmonitor>? monitor, Pointer<Void>? pointer) {
-  final _glfwSetMonitorUserPointer = DLL_glfw3.lookupFunction<
+  final _glfwSetMonitorUserPointer = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWmonitor>? monitor, Pointer<Void>? pointer),
       void Function(Pointer<GLFWmonitor>? monitor, Pointer<Void>? pointer)>('glfwSetMonitorUserPointer');
   return _glfwSetMonitorUserPointer(monitor, pointer);
@@ -706,7 +706,7 @@ void glfwSetMonitorUserPointer(Pointer<GLFWmonitor>? monitor, Pointer<Void>? poi
 /// GLFWAPI void* glfwGetMonitorUserPointer(GLFWmonitor* monitor)
 /// ```
 Pointer<Void>? glfwGetMonitorUserPointer(Pointer<GLFWmonitor>? monitor) {
-  final _glfwGetMonitorUserPointer = DLL_glfw3.lookupFunction<
+  final _glfwGetMonitorUserPointer = libglfw3.lookupFunction<
       Pointer<Void>? Function(Pointer<GLFWmonitor>? monitor),
       Pointer<Void>? Function(Pointer<GLFWmonitor>? monitor)>('glfwGetMonitorUserPointer');
   return _glfwGetMonitorUserPointer(monitor);
@@ -744,7 +744,7 @@ Pointer<Void>? glfwGetMonitorUserPointer(Pointer<GLFWmonitor>? monitor) {
 /// GLFWAPI GLFWmonitorfun glfwSetMonitorCallback(GLFWmonitorfun callback)
 /// ```
 GLFWmonitorfun glfwSetMonitorCallback(GLFWmonitorfun callback) {
-  final _glfwSetMonitorCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetMonitorCallback = libglfw3.lookupFunction<
       GLFWmonitorfun Function(GLFWmonitorfun callback),
       GLFWmonitorfun Function(GLFWmonitorfun callback)>('glfwSetMonitorCallback');
   return _glfwSetMonitorCallback(callback);
@@ -754,8 +754,9 @@ GLFWmonitorfun glfwSetMonitorCallback(GLFWmonitorfun callback) {
 /// 
 /// This function returns an array of all video modes supported by the specified
 /// monitor.  The returned array is sorted in ascending order, first by color
-/// bit depth (the sum of all channel depths) and then by resolution area (the
-/// product of width and height).
+/// bit depth (the sum of all channel depths), then by resolution area (the
+/// product of width and height), then resolution width and finally by refresh
+/// rate.
 /// 
 /// @param[in] monitor The monitor to query.
 /// @param[out] count Where to store the number of video modes in the returned
@@ -785,7 +786,7 @@ GLFWmonitorfun glfwSetMonitorCallback(GLFWmonitorfun callback) {
 /// GLFWAPI const GLFWvidmode* glfwGetVideoModes(GLFWmonitor* monitor, int* count)
 /// ```
 Pointer<GLFWvidmode>? glfwGetVideoModes(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? count) {
-  final _glfwGetVideoModes = DLL_glfw3.lookupFunction<
+  final _glfwGetVideoModes = libglfw3.lookupFunction<
       Pointer<GLFWvidmode>? Function(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? count),
       Pointer<GLFWvidmode>? Function(Pointer<GLFWmonitor>? monitor, Pointer<Int32>? count)>('glfwGetVideoModes');
   return _glfwGetVideoModes(monitor, count);
@@ -821,7 +822,7 @@ Pointer<GLFWvidmode>? glfwGetVideoModes(Pointer<GLFWmonitor>? monitor, Pointer<I
 /// GLFWAPI const GLFWvidmode* glfwGetVideoMode(GLFWmonitor* monitor)
 /// ```
 Pointer<GLFWvidmode>? glfwGetVideoMode(Pointer<GLFWmonitor>? monitor) {
-  final _glfwGetVideoMode = DLL_glfw3.lookupFunction<
+  final _glfwGetVideoMode = libglfw3.lookupFunction<
       Pointer<GLFWvidmode>? Function(Pointer<GLFWmonitor>? monitor),
       Pointer<GLFWvidmode>? Function(Pointer<GLFWmonitor>? monitor)>('glfwGetVideoMode');
   return _glfwGetVideoMode(monitor);
@@ -862,7 +863,7 @@ Pointer<GLFWvidmode>? glfwGetVideoMode(Pointer<GLFWmonitor>? monitor) {
 /// GLFWAPI void glfwSetGamma(GLFWmonitor* monitor, float gamma)
 /// ```
 void glfwSetGamma(Pointer<GLFWmonitor>? monitor, double gamma) {
-  final _glfwSetGamma = DLL_glfw3.lookupFunction<
+  final _glfwSetGamma = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWmonitor>? monitor, Float gamma),
       void Function(Pointer<GLFWmonitor>? monitor, double gamma)>('glfwSetGamma');
   return _glfwSetGamma(monitor, gamma);
@@ -900,7 +901,7 @@ void glfwSetGamma(Pointer<GLFWmonitor>? monitor, double gamma) {
 /// GLFWAPI const GLFWgammaramp* glfwGetGammaRamp(GLFWmonitor* monitor)
 /// ```
 Pointer<GLFWgammaramp>? glfwGetGammaRamp(Pointer<GLFWmonitor>? monitor) {
-  final _glfwGetGammaRamp = DLL_glfw3.lookupFunction<
+  final _glfwGetGammaRamp = libglfw3.lookupFunction<
       Pointer<GLFWgammaramp>? Function(Pointer<GLFWmonitor>? monitor),
       Pointer<GLFWgammaramp>? Function(Pointer<GLFWmonitor>? monitor)>('glfwGetGammaRamp');
   return _glfwGetGammaRamp(monitor);
@@ -949,7 +950,7 @@ Pointer<GLFWgammaramp>? glfwGetGammaRamp(Pointer<GLFWmonitor>? monitor) {
 /// GLFWAPI void glfwSetGammaRamp(GLFWmonitor* monitor, const GLFWgammaramp* ramp)
 /// ```
 void glfwSetGammaRamp(Pointer<GLFWmonitor>? monitor, Pointer<GLFWgammaramp>? ramp) {
-  final _glfwSetGammaRamp = DLL_glfw3.lookupFunction<
+  final _glfwSetGammaRamp = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWmonitor>? monitor, Pointer<GLFWgammaramp>? ramp),
       void Function(Pointer<GLFWmonitor>? monitor, Pointer<GLFWgammaramp>? ramp)>('glfwSetGammaRamp');
   return _glfwSetGammaRamp(monitor, ramp);
@@ -976,7 +977,7 @@ void glfwSetGammaRamp(Pointer<GLFWmonitor>? monitor, Pointer<GLFWgammaramp>? ram
 /// GLFWAPI void glfwDefaultWindowHints(void)
 /// ```
 void glfwDefaultWindowHints() {
-  final _glfwDefaultWindowHints = DLL_glfw3.lookupFunction<
+  final _glfwDefaultWindowHints = libglfw3.lookupFunction<
       Void Function(),
       void Function()>('glfwDefaultWindowHints');
   return _glfwDefaultWindowHints();
@@ -1019,7 +1020,7 @@ void glfwDefaultWindowHints() {
 /// GLFWAPI void glfwWindowHint(int hint, int value)
 /// ```
 void glfwWindowHint(int hint, int value) {
-  final _glfwWindowHint = DLL_glfw3.lookupFunction<
+  final _glfwWindowHint = libglfw3.lookupFunction<
       Void Function(Int32 hint, Int32 value),
       void Function(int hint, int value)>('glfwWindowHint');
   return _glfwWindowHint(hint, value);
@@ -1065,7 +1066,7 @@ void glfwWindowHint(int hint, int value) {
 /// GLFWAPI void glfwWindowHintString(int hint, const char* value)
 /// ```
 void glfwWindowHintString(int hint, String value) {
-  final _glfwWindowHintString = DLL_glfw3.lookupFunction<
+  final _glfwWindowHintString = libglfw3.lookupFunction<
       Void Function(Int32 hint, Pointer<Utf8>? value),
       void Function(int hint, Pointer<Utf8>? value)>('glfwWindowHintString');
   final _valuePointer = value.toNativeUtf8();
@@ -1230,7 +1231,7 @@ void glfwWindowHintString(int hint, String value) {
 /// GLFWAPI GLFWwindow* glfwCreateWindow(int width, int height, const char* title, GLFWmonitor* monitor, GLFWwindow* share)
 /// ```
 Pointer<GLFWwindow>? glfwCreateWindow(int width, int height, String title, Pointer<GLFWmonitor>? monitor, Pointer<GLFWwindow>? share) {
-  final _glfwCreateWindow = DLL_glfw3.lookupFunction<
+  final _glfwCreateWindow = libglfw3.lookupFunction<
       Pointer<GLFWwindow>? Function(Int32 width, Int32 height, Pointer<Utf8>? title, Pointer<GLFWmonitor>? monitor, Pointer<GLFWwindow>? share),
       Pointer<GLFWwindow>? Function(int width, int height, Pointer<Utf8>? title, Pointer<GLFWmonitor>? monitor, Pointer<GLFWwindow>? share)>('glfwCreateWindow');
   final _titlePointer = title.toNativeUtf8();
@@ -1270,7 +1271,7 @@ Pointer<GLFWwindow>? glfwCreateWindow(int width, int height, String title, Point
 /// GLFWAPI void glfwDestroyWindow(GLFWwindow* window)
 /// ```
 void glfwDestroyWindow(Pointer<GLFWwindow>? window) {
-  final _glfwDestroyWindow = DLL_glfw3.lookupFunction<
+  final _glfwDestroyWindow = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwDestroyWindow');
   return _glfwDestroyWindow(window);
@@ -1298,7 +1299,7 @@ void glfwDestroyWindow(Pointer<GLFWwindow>? window) {
 /// GLFWAPI int glfwWindowShouldClose(GLFWwindow* window)
 /// ```
 int glfwWindowShouldClose(Pointer<GLFWwindow>? window) {
-  final _glfwWindowShouldClose = DLL_glfw3.lookupFunction<
+  final _glfwWindowShouldClose = libglfw3.lookupFunction<
       Int32 Function(Pointer<GLFWwindow>? window),
       int Function(Pointer<GLFWwindow>? window)>('glfwWindowShouldClose');
   return _glfwWindowShouldClose(window);
@@ -1328,7 +1329,7 @@ int glfwWindowShouldClose(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwSetWindowShouldClose(GLFWwindow* window, int value)
 /// ```
 void glfwSetWindowShouldClose(Pointer<GLFWwindow>? window, int value) {
-  final _glfwSetWindowShouldClose = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowShouldClose = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Int32 value),
       void Function(Pointer<GLFWwindow>? window, int value)>('glfwSetWindowShouldClose');
   return _glfwSetWindowShouldClose(window, value);
@@ -1361,7 +1362,7 @@ void glfwSetWindowShouldClose(Pointer<GLFWwindow>? window, int value) {
 /// GLFWAPI void glfwSetWindowTitle(GLFWwindow* window, const char* title)
 /// ```
 void glfwSetWindowTitle(Pointer<GLFWwindow>? window, String title) {
-  final _glfwSetWindowTitle = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowTitle = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Utf8>? title),
       void Function(Pointer<GLFWwindow>? window, Pointer<Utf8>? title)>('glfwSetWindowTitle');
   final _titlePointer = title.toNativeUtf8();
@@ -1391,8 +1392,8 @@ void glfwSetWindowTitle(Pointer<GLFWwindow>? window, String title) {
 /// @param[in] images The images to create the icon from.  This is ignored if
 /// count is zero.
 /// 
-/// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
-/// GLFW_PLATFORM_ERROR.
+/// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+/// GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
 /// 
 /// @pointer_lifetime The specified image data is copied before this function
 /// returns.
@@ -1419,7 +1420,7 @@ void glfwSetWindowTitle(Pointer<GLFWwindow>? window, String title) {
 /// GLFWAPI void glfwSetWindowIcon(GLFWwindow* window, int count, const GLFWimage* images)
 /// ```
 void glfwSetWindowIcon(Pointer<GLFWwindow>? window, int count, Pointer<GLFWimage>? images) {
-  final _glfwSetWindowIcon = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowIcon = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Int32 count, Pointer<GLFWimage>? images),
       void Function(Pointer<GLFWwindow>? window, int count, Pointer<GLFWimage>? images)>('glfwSetWindowIcon');
   return _glfwSetWindowIcon(window, count, images);
@@ -1459,7 +1460,7 @@ void glfwSetWindowIcon(Pointer<GLFWwindow>? window, int count, Pointer<GLFWimage
 /// GLFWAPI void glfwGetWindowPos(GLFWwindow* window, int* xpos, int* ypos)
 /// ```
 void glfwGetWindowPos(Pointer<GLFWwindow>? window, Pointer<Int32>? xpos, Pointer<Int32>? ypos) {
-  final _glfwGetWindowPos = DLL_glfw3.lookupFunction<
+  final _glfwGetWindowPos = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Int32>? xpos, Pointer<Int32>? ypos),
       void Function(Pointer<GLFWwindow>? window, Pointer<Int32>? xpos, Pointer<Int32>? ypos)>('glfwGetWindowPos');
   return _glfwGetWindowPos(window, xpos, ypos);
@@ -1502,7 +1503,7 @@ void glfwGetWindowPos(Pointer<GLFWwindow>? window, Pointer<Int32>? xpos, Pointer
 /// GLFWAPI void glfwSetWindowPos(GLFWwindow* window, int xpos, int ypos)
 /// ```
 void glfwSetWindowPos(Pointer<GLFWwindow>? window, int xpos, int ypos) {
-  final _glfwSetWindowPos = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowPos = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Int32 xpos, Int32 ypos),
       void Function(Pointer<GLFWwindow>? window, int xpos, int ypos)>('glfwSetWindowPos');
   return _glfwSetWindowPos(window, xpos, ypos);
@@ -1540,7 +1541,7 @@ void glfwSetWindowPos(Pointer<GLFWwindow>? window, int xpos, int ypos) {
 /// GLFWAPI void glfwGetWindowSize(GLFWwindow* window, int* width, int* height)
 /// ```
 void glfwGetWindowSize(Pointer<GLFWwindow>? window, Pointer<Int32>? width, Pointer<Int32>? height) {
-  final _glfwGetWindowSize = DLL_glfw3.lookupFunction<
+  final _glfwGetWindowSize = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Int32>? width, Pointer<Int32>? height),
       void Function(Pointer<GLFWwindow>? window, Pointer<Int32>? width, Pointer<Int32>? height)>('glfwGetWindowSize');
   return _glfwGetWindowSize(window, width, height);
@@ -1591,7 +1592,7 @@ void glfwGetWindowSize(Pointer<GLFWwindow>? window, Pointer<Int32>? width, Point
 /// GLFWAPI void glfwSetWindowSizeLimits(GLFWwindow* window, int minwidth, int minheight, int maxwidth, int maxheight)
 /// ```
 void glfwSetWindowSizeLimits(Pointer<GLFWwindow>? window, int minwidth, int minheight, int maxwidth, int maxheight) {
-  final _glfwSetWindowSizeLimits = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowSizeLimits = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Int32 minwidth, Int32 minheight, Int32 maxwidth, Int32 maxheight),
       void Function(Pointer<GLFWwindow>? window, int minwidth, int minheight, int maxwidth, int maxheight)>('glfwSetWindowSizeLimits');
   return _glfwSetWindowSizeLimits(window, minwidth, minheight, maxwidth, maxheight);
@@ -1642,7 +1643,7 @@ void glfwSetWindowSizeLimits(Pointer<GLFWwindow>? window, int minwidth, int minh
 /// GLFWAPI void glfwSetWindowAspectRatio(GLFWwindow* window, int numer, int denom)
 /// ```
 void glfwSetWindowAspectRatio(Pointer<GLFWwindow>? window, int numer, int denom) {
-  final _glfwSetWindowAspectRatio = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowAspectRatio = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Int32 numer, Int32 denom),
       void Function(Pointer<GLFWwindow>? window, int numer, int denom)>('glfwSetWindowAspectRatio');
   return _glfwSetWindowAspectRatio(window, numer, denom);
@@ -1691,7 +1692,7 @@ void glfwSetWindowAspectRatio(Pointer<GLFWwindow>? window, int numer, int denom)
 /// GLFWAPI void glfwSetWindowSize(GLFWwindow* window, int width, int height)
 /// ```
 void glfwSetWindowSize(Pointer<GLFWwindow>? window, int width, int height) {
-  final _glfwSetWindowSize = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowSize = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Int32 width, Int32 height),
       void Function(Pointer<GLFWwindow>? window, int width, int height)>('glfwSetWindowSize');
   return _glfwSetWindowSize(window, width, height);
@@ -1728,7 +1729,7 @@ void glfwSetWindowSize(Pointer<GLFWwindow>? window, int width, int height) {
 /// GLFWAPI void glfwGetFramebufferSize(GLFWwindow* window, int* width, int* height)
 /// ```
 void glfwGetFramebufferSize(Pointer<GLFWwindow>? window, Pointer<Int32>? width, Pointer<Int32>? height) {
-  final _glfwGetFramebufferSize = DLL_glfw3.lookupFunction<
+  final _glfwGetFramebufferSize = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Int32>? width, Pointer<Int32>? height),
       void Function(Pointer<GLFWwindow>? window, Pointer<Int32>? width, Pointer<Int32>? height)>('glfwGetFramebufferSize');
   return _glfwGetFramebufferSize(window, width, height);
@@ -1773,7 +1774,7 @@ void glfwGetFramebufferSize(Pointer<GLFWwindow>? window, Pointer<Int32>? width, 
 /// GLFWAPI void glfwGetWindowFrameSize(GLFWwindow* window, int* left, int* top, int* right, int* bottom)
 /// ```
 void glfwGetWindowFrameSize(Pointer<GLFWwindow>? window, Pointer<Int32>? left, Pointer<Int32>? top, Pointer<Int32>? right, Pointer<Int32>? bottom) {
-  final _glfwGetWindowFrameSize = DLL_glfw3.lookupFunction<
+  final _glfwGetWindowFrameSize = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Int32>? left, Pointer<Int32>? top, Pointer<Int32>? right, Pointer<Int32>? bottom),
       void Function(Pointer<GLFWwindow>? window, Pointer<Int32>? left, Pointer<Int32>? top, Pointer<Int32>? right, Pointer<Int32>? bottom)>('glfwGetWindowFrameSize');
   return _glfwGetWindowFrameSize(window, left, top, right, bottom);
@@ -1814,7 +1815,7 @@ void glfwGetWindowFrameSize(Pointer<GLFWwindow>? window, Pointer<Int32>? left, P
 /// GLFWAPI void glfwGetWindowContentScale(GLFWwindow* window, float* xscale, float* yscale)
 /// ```
 void glfwGetWindowContentScale(Pointer<GLFWwindow>? window, Pointer<Float>? xscale, Pointer<Float>? yscale) {
-  final _glfwGetWindowContentScale = DLL_glfw3.lookupFunction<
+  final _glfwGetWindowContentScale = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Float>? xscale, Pointer<Float>? yscale),
       void Function(Pointer<GLFWwindow>? window, Pointer<Float>? xscale, Pointer<Float>? yscale)>('glfwGetWindowContentScale');
   return _glfwGetWindowContentScale(window, xscale, yscale);
@@ -1849,7 +1850,7 @@ void glfwGetWindowContentScale(Pointer<GLFWwindow>? window, Pointer<Float>? xsca
 /// GLFWAPI float glfwGetWindowOpacity(GLFWwindow* window)
 /// ```
 double glfwGetWindowOpacity(Pointer<GLFWwindow>? window) {
-  final _glfwGetWindowOpacity = DLL_glfw3.lookupFunction<
+  final _glfwGetWindowOpacity = libglfw3.lookupFunction<
       Float Function(Pointer<GLFWwindow>? window),
       double Function(Pointer<GLFWwindow>? window)>('glfwGetWindowOpacity');
   return _glfwGetWindowOpacity(window);
@@ -1886,7 +1887,7 @@ double glfwGetWindowOpacity(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwSetWindowOpacity(GLFWwindow* window, float opacity)
 /// ```
 void glfwSetWindowOpacity(Pointer<GLFWwindow>? window, double opacity) {
-  final _glfwSetWindowOpacity = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowOpacity = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Float opacity),
       void Function(Pointer<GLFWwindow>? window, double opacity)>('glfwSetWindowOpacity');
   return _glfwSetWindowOpacity(window, opacity);
@@ -1898,17 +1899,14 @@ void glfwSetWindowOpacity(Pointer<GLFWwindow>? window, double opacity) {
 /// previously restored.  If the window is already iconified, this function does
 /// nothing.
 /// 
-/// If the specified window is a full screen window, the original monitor
-/// resolution is restored until the window is restored.
+/// If the specified window is a full screen window, GLFW restores the original
+/// video mode of the monitor.  The window's desired video mode is set again
+/// when the window is restored.
 /// 
 /// @param[in] window The window to iconify.
 /// 
 /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
 /// GLFW_PLATFORM_ERROR.
-/// 
-/// @remark @wayland There is no concept of iconification in wl_shell, this
-/// function will emit @ref GLFW_PLATFORM_ERROR when using this deprecated
-/// protocol.
 /// 
 /// @thread_safety This function must only be called from the main thread.
 /// 
@@ -1925,7 +1923,7 @@ void glfwSetWindowOpacity(Pointer<GLFWwindow>? window, double opacity) {
 /// GLFWAPI void glfwIconifyWindow(GLFWwindow* window)
 /// ```
 void glfwIconifyWindow(Pointer<GLFWwindow>? window) {
-  final _glfwIconifyWindow = DLL_glfw3.lookupFunction<
+  final _glfwIconifyWindow = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwIconifyWindow');
   return _glfwIconifyWindow(window);
@@ -1937,8 +1935,8 @@ void glfwIconifyWindow(Pointer<GLFWwindow>? window) {
 /// (minimized) or maximized.  If the window is already restored, this function
 /// does nothing.
 /// 
-/// If the specified window is a full screen window, the resolution chosen for
-/// the window is restored on the selected monitor.
+/// If the specified window is an iconified full screen window, its desired
+/// video mode is set again for its monitor when the window is restored.
 /// 
 /// @param[in] window The window to restore.
 /// 
@@ -1960,7 +1958,7 @@ void glfwIconifyWindow(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwRestoreWindow(GLFWwindow* window)
 /// ```
 void glfwRestoreWindow(Pointer<GLFWwindow>? window) {
-  final _glfwRestoreWindow = DLL_glfw3.lookupFunction<
+  final _glfwRestoreWindow = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwRestoreWindow');
   return _glfwRestoreWindow(window);
@@ -1993,7 +1991,7 @@ void glfwRestoreWindow(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwMaximizeWindow(GLFWwindow* window)
 /// ```
 void glfwMaximizeWindow(Pointer<GLFWwindow>? window) {
-  final _glfwMaximizeWindow = DLL_glfw3.lookupFunction<
+  final _glfwMaximizeWindow = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwMaximizeWindow');
   return _glfwMaximizeWindow(window);
@@ -2015,6 +2013,11 @@ void glfwMaximizeWindow(Pointer<GLFWwindow>? window) {
 /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
 /// GLFW_PLATFORM_ERROR.
 /// 
+/// @remark @wayland Because Wayland wants every frame of the desktop to be
+/// complete, this function does not immediately make the window visible.
+/// Instead it will become visible the next time the window framebuffer is
+/// updated after this call.
+/// 
 /// @thread_safety This function must only be called from the main thread.
 /// 
 /// @sa @ref window_hide
@@ -2028,7 +2031,7 @@ void glfwMaximizeWindow(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwShowWindow(GLFWwindow* window)
 /// ```
 void glfwShowWindow(Pointer<GLFWwindow>? window) {
-  final _glfwShowWindow = DLL_glfw3.lookupFunction<
+  final _glfwShowWindow = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwShowWindow');
   return _glfwShowWindow(window);
@@ -2058,7 +2061,7 @@ void glfwShowWindow(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwHideWindow(GLFWwindow* window)
 /// ```
 void glfwHideWindow(Pointer<GLFWwindow>? window) {
-  final _glfwHideWindow = DLL_glfw3.lookupFunction<
+  final _glfwHideWindow = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwHideWindow');
   return _glfwHideWindow(window);
@@ -2105,7 +2108,7 @@ void glfwHideWindow(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwFocusWindow(GLFWwindow* window)
 /// ```
 void glfwFocusWindow(Pointer<GLFWwindow>? window) {
-  final _glfwFocusWindow = DLL_glfw3.lookupFunction<
+  final _glfwFocusWindow = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwFocusWindow');
   return _glfwFocusWindow(window);
@@ -2140,7 +2143,7 @@ void glfwFocusWindow(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwRequestWindowAttention(GLFWwindow* window)
 /// ```
 void glfwRequestWindowAttention(Pointer<GLFWwindow>? window) {
-  final _glfwRequestWindowAttention = DLL_glfw3.lookupFunction<
+  final _glfwRequestWindowAttention = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwRequestWindowAttention');
   return _glfwRequestWindowAttention(window);
@@ -2170,7 +2173,7 @@ void glfwRequestWindowAttention(Pointer<GLFWwindow>? window) {
 /// GLFWAPI GLFWmonitor* glfwGetWindowMonitor(GLFWwindow* window)
 /// ```
 Pointer<GLFWmonitor>? glfwGetWindowMonitor(Pointer<GLFWwindow>? window) {
-  final _glfwGetWindowMonitor = DLL_glfw3.lookupFunction<
+  final _glfwGetWindowMonitor = libglfw3.lookupFunction<
       Pointer<GLFWmonitor>? Function(Pointer<GLFWwindow>? window),
       Pointer<GLFWmonitor>? Function(Pointer<GLFWwindow>? window)>('glfwGetWindowMonitor');
   return _glfwGetWindowMonitor(window);
@@ -2237,7 +2240,7 @@ Pointer<GLFWmonitor>? glfwGetWindowMonitor(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwSetWindowMonitor(GLFWwindow* window, GLFWmonitor* monitor, int xpos, int ypos, int width, int height, int refreshRate)
 /// ```
 void glfwSetWindowMonitor(Pointer<GLFWwindow>? window, Pointer<GLFWmonitor>? monitor, int xpos, int ypos, int width, int height, int refreshRate) {
-  final _glfwSetWindowMonitor = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowMonitor = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<GLFWmonitor>? monitor, Int32 xpos, Int32 ypos, Int32 width, Int32 height, Int32 refreshRate),
       void Function(Pointer<GLFWwindow>? window, Pointer<GLFWmonitor>? monitor, int xpos, int ypos, int width, int height, int refreshRate)>('glfwSetWindowMonitor');
   return _glfwSetWindowMonitor(window, monitor, xpos, ypos, width, height, refreshRate);
@@ -2265,6 +2268,9 @@ void glfwSetWindowMonitor(Pointer<GLFWwindow>? window, Pointer<GLFWmonitor>? mon
 /// errors.  However, this function should not fail as long as it is passed
 /// valid arguments and the library has been [initialized](@ref intro_init).
 /// 
+/// @remark @wayland The Wayland protocol provides no way to check whether a
+/// window is iconfied, so @ref GLFW_ICONIFIED always returns `GLFW_FALSE`.
+/// 
 /// @thread_safety This function must only be called from the main thread.
 /// 
 /// @sa @ref window_attribs
@@ -2279,7 +2285,7 @@ void glfwSetWindowMonitor(Pointer<GLFWwindow>? window, Pointer<GLFWmonitor>? mon
 /// GLFWAPI int glfwGetWindowAttrib(GLFWwindow* window, int attrib)
 /// ```
 int glfwGetWindowAttrib(Pointer<GLFWwindow>? window, int attrib) {
-  final _glfwGetWindowAttrib = DLL_glfw3.lookupFunction<
+  final _glfwGetWindowAttrib = libglfw3.lookupFunction<
       Int32 Function(Pointer<GLFWwindow>? window, Int32 attrib),
       int Function(Pointer<GLFWwindow>? window, int attrib)>('glfwGetWindowAttrib');
   return _glfwGetWindowAttrib(window, attrib);
@@ -2324,7 +2330,7 @@ int glfwGetWindowAttrib(Pointer<GLFWwindow>? window, int attrib) {
 /// GLFWAPI void glfwSetWindowAttrib(GLFWwindow* window, int attrib, int value)
 /// ```
 void glfwSetWindowAttrib(Pointer<GLFWwindow>? window, int attrib, int value) {
-  final _glfwSetWindowAttrib = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowAttrib = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Int32 attrib, Int32 value),
       void Function(Pointer<GLFWwindow>? window, int attrib, int value)>('glfwSetWindowAttrib');
   return _glfwSetWindowAttrib(window, attrib, value);
@@ -2355,7 +2361,7 @@ void glfwSetWindowAttrib(Pointer<GLFWwindow>? window, int attrib, int value) {
 /// GLFWAPI void glfwSetWindowUserPointer(GLFWwindow* window, void* pointer)
 /// ```
 void glfwSetWindowUserPointer(Pointer<GLFWwindow>? window, Pointer<Void>? pointer) {
-  final _glfwSetWindowUserPointer = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowUserPointer = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Void>? pointer),
       void Function(Pointer<GLFWwindow>? window, Pointer<Void>? pointer)>('glfwSetWindowUserPointer');
   return _glfwSetWindowUserPointer(window, pointer);
@@ -2384,7 +2390,7 @@ void glfwSetWindowUserPointer(Pointer<GLFWwindow>? window, Pointer<Void>? pointe
 /// GLFWAPI void* glfwGetWindowUserPointer(GLFWwindow* window)
 /// ```
 Pointer<Void>? glfwGetWindowUserPointer(Pointer<GLFWwindow>? window) {
-  final _glfwGetWindowUserPointer = DLL_glfw3.lookupFunction<
+  final _glfwGetWindowUserPointer = libglfw3.lookupFunction<
       Pointer<Void>? Function(Pointer<GLFWwindow>? window),
       Pointer<Void>? Function(Pointer<GLFWwindow>? window)>('glfwGetWindowUserPointer');
   return _glfwGetWindowUserPointer(window);
@@ -2427,7 +2433,7 @@ Pointer<Void>? glfwGetWindowUserPointer(Pointer<GLFWwindow>? window) {
 /// GLFWAPI GLFWwindowposfun glfwSetWindowPosCallback(GLFWwindow* window, GLFWwindowposfun callback)
 /// ```
 GLFWwindowposfun glfwSetWindowPosCallback(Pointer<GLFWwindow>? window, GLFWwindowposfun callback) {
-  final _glfwSetWindowPosCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowPosCallback = libglfw3.lookupFunction<
       GLFWwindowposfun Function(Pointer<GLFWwindow>? window, GLFWwindowposfun callback),
       GLFWwindowposfun Function(Pointer<GLFWwindow>? window, GLFWwindowposfun callback)>('glfwSetWindowPosCallback');
   return _glfwSetWindowPosCallback(window, callback);
@@ -2467,7 +2473,7 @@ GLFWwindowposfun glfwSetWindowPosCallback(Pointer<GLFWwindow>? window, GLFWwindo
 /// GLFWAPI GLFWwindowsizefun glfwSetWindowSizeCallback(GLFWwindow* window, GLFWwindowsizefun callback)
 /// ```
 GLFWwindowsizefun glfwSetWindowSizeCallback(Pointer<GLFWwindow>? window, GLFWwindowsizefun callback) {
-  final _glfwSetWindowSizeCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowSizeCallback = libglfw3.lookupFunction<
       GLFWwindowsizefun Function(Pointer<GLFWwindow>? window, GLFWwindowsizefun callback),
       GLFWwindowsizefun Function(Pointer<GLFWwindow>? window, GLFWwindowsizefun callback)>('glfwSetWindowSizeCallback');
   return _glfwSetWindowSizeCallback(window, callback);
@@ -2515,7 +2521,7 @@ GLFWwindowsizefun glfwSetWindowSizeCallback(Pointer<GLFWwindow>? window, GLFWwin
 /// GLFWAPI GLFWwindowclosefun glfwSetWindowCloseCallback(GLFWwindow* window, GLFWwindowclosefun callback)
 /// ```
 GLFWwindowclosefun glfwSetWindowCloseCallback(Pointer<GLFWwindow>? window, GLFWwindowclosefun callback) {
-  final _glfwSetWindowCloseCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowCloseCallback = libglfw3.lookupFunction<
       GLFWwindowclosefun Function(Pointer<GLFWwindow>? window, GLFWwindowclosefun callback),
       GLFWwindowclosefun Function(Pointer<GLFWwindow>? window, GLFWwindowclosefun callback)>('glfwSetWindowCloseCallback');
   return _glfwSetWindowCloseCallback(window, callback);
@@ -2559,7 +2565,7 @@ GLFWwindowclosefun glfwSetWindowCloseCallback(Pointer<GLFWwindow>? window, GLFWw
 /// GLFWAPI GLFWwindowrefreshfun glfwSetWindowRefreshCallback(GLFWwindow* window, GLFWwindowrefreshfun callback)
 /// ```
 GLFWwindowrefreshfun glfwSetWindowRefreshCallback(Pointer<GLFWwindow>? window, GLFWwindowrefreshfun callback) {
-  final _glfwSetWindowRefreshCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowRefreshCallback = libglfw3.lookupFunction<
       GLFWwindowrefreshfun Function(Pointer<GLFWwindow>? window, GLFWwindowrefreshfun callback),
       GLFWwindowrefreshfun Function(Pointer<GLFWwindow>? window, GLFWwindowrefreshfun callback)>('glfwSetWindowRefreshCallback');
   return _glfwSetWindowRefreshCallback(window, callback);
@@ -2602,7 +2608,7 @@ GLFWwindowrefreshfun glfwSetWindowRefreshCallback(Pointer<GLFWwindow>? window, G
 /// GLFWAPI GLFWwindowfocusfun glfwSetWindowFocusCallback(GLFWwindow* window, GLFWwindowfocusfun callback)
 /// ```
 GLFWwindowfocusfun glfwSetWindowFocusCallback(Pointer<GLFWwindow>? window, GLFWwindowfocusfun callback) {
-  final _glfwSetWindowFocusCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowFocusCallback = libglfw3.lookupFunction<
       GLFWwindowfocusfun Function(Pointer<GLFWwindow>? window, GLFWwindowfocusfun callback),
       GLFWwindowfocusfun Function(Pointer<GLFWwindow>? window, GLFWwindowfocusfun callback)>('glfwSetWindowFocusCallback');
   return _glfwSetWindowFocusCallback(window, callback);
@@ -2628,8 +2634,8 @@ GLFWwindowfocusfun glfwSetWindowFocusCallback(Pointer<GLFWwindow>? window, GLFWw
 /// 
 /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
 /// 
-/// @remark @wayland The wl_shell protocol has no concept of iconification,
-/// this callback will never be called when using this deprecated protocol.
+/// @remark @wayland The XDG-shell protocol has no event for iconification, so
+/// this callback will never be called.
 /// 
 /// @thread_safety This function must only be called from the main thread.
 /// 
@@ -2643,7 +2649,7 @@ GLFWwindowfocusfun glfwSetWindowFocusCallback(Pointer<GLFWwindow>? window, GLFWw
 /// GLFWAPI GLFWwindowiconifyfun glfwSetWindowIconifyCallback(GLFWwindow* window, GLFWwindowiconifyfun callback)
 /// ```
 GLFWwindowiconifyfun glfwSetWindowIconifyCallback(Pointer<GLFWwindow>? window, GLFWwindowiconifyfun callback) {
-  final _glfwSetWindowIconifyCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowIconifyCallback = libglfw3.lookupFunction<
       GLFWwindowiconifyfun Function(Pointer<GLFWwindow>? window, GLFWwindowiconifyfun callback),
       GLFWwindowiconifyfun Function(Pointer<GLFWwindow>? window, GLFWwindowiconifyfun callback)>('glfwSetWindowIconifyCallback');
   return _glfwSetWindowIconifyCallback(window, callback);
@@ -2681,7 +2687,7 @@ GLFWwindowiconifyfun glfwSetWindowIconifyCallback(Pointer<GLFWwindow>? window, G
 /// GLFWAPI GLFWwindowmaximizefun glfwSetWindowMaximizeCallback(GLFWwindow* window, GLFWwindowmaximizefun callback)
 /// ```
 GLFWwindowmaximizefun glfwSetWindowMaximizeCallback(Pointer<GLFWwindow>? window, GLFWwindowmaximizefun callback) {
-  final _glfwSetWindowMaximizeCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowMaximizeCallback = libglfw3.lookupFunction<
       GLFWwindowmaximizefun Function(Pointer<GLFWwindow>? window, GLFWwindowmaximizefun callback),
       GLFWwindowmaximizefun Function(Pointer<GLFWwindow>? window, GLFWwindowmaximizefun callback)>('glfwSetWindowMaximizeCallback');
   return _glfwSetWindowMaximizeCallback(window, callback);
@@ -2719,7 +2725,7 @@ GLFWwindowmaximizefun glfwSetWindowMaximizeCallback(Pointer<GLFWwindow>? window,
 /// GLFWAPI GLFWframebuffersizefun glfwSetFramebufferSizeCallback(GLFWwindow* window, GLFWframebuffersizefun callback)
 /// ```
 GLFWframebuffersizefun glfwSetFramebufferSizeCallback(Pointer<GLFWwindow>? window, GLFWframebuffersizefun callback) {
-  final _glfwSetFramebufferSizeCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetFramebufferSizeCallback = libglfw3.lookupFunction<
       GLFWframebuffersizefun Function(Pointer<GLFWwindow>? window, GLFWframebuffersizefun callback),
       GLFWframebuffersizefun Function(Pointer<GLFWwindow>? window, GLFWframebuffersizefun callback)>('glfwSetFramebufferSizeCallback');
   return _glfwSetFramebufferSizeCallback(window, callback);
@@ -2758,7 +2764,7 @@ GLFWframebuffersizefun glfwSetFramebufferSizeCallback(Pointer<GLFWwindow>? windo
 /// GLFWAPI GLFWwindowcontentscalefun glfwSetWindowContentScaleCallback(GLFWwindow* window, GLFWwindowcontentscalefun callback)
 /// ```
 GLFWwindowcontentscalefun glfwSetWindowContentScaleCallback(Pointer<GLFWwindow>? window, GLFWwindowcontentscalefun callback) {
-  final _glfwSetWindowContentScaleCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetWindowContentScaleCallback = libglfw3.lookupFunction<
       GLFWwindowcontentscalefun Function(Pointer<GLFWwindow>? window, GLFWwindowcontentscalefun callback),
       GLFWwindowcontentscalefun Function(Pointer<GLFWwindow>? window, GLFWwindowcontentscalefun callback)>('glfwSetWindowContentScaleCallback');
   return _glfwSetWindowContentScaleCallback(window, callback);
@@ -2804,7 +2810,7 @@ GLFWwindowcontentscalefun glfwSetWindowContentScaleCallback(Pointer<GLFWwindow>?
 /// GLFWAPI void glfwPollEvents(void)
 /// ```
 void glfwPollEvents() {
-  final _glfwPollEvents = DLL_glfw3.lookupFunction<
+  final _glfwPollEvents = libglfw3.lookupFunction<
       Void Function(),
       void Function()>('glfwPollEvents');
   return _glfwPollEvents();
@@ -2857,7 +2863,7 @@ void glfwPollEvents() {
 /// GLFWAPI void glfwWaitEvents(void)
 /// ```
 void glfwWaitEvents() {
-  final _glfwWaitEvents = DLL_glfw3.lookupFunction<
+  final _glfwWaitEvents = libglfw3.lookupFunction<
       Void Function(),
       void Function()>('glfwWaitEvents');
   return _glfwWaitEvents();
@@ -2914,7 +2920,7 @@ void glfwWaitEvents() {
 /// GLFWAPI void glfwWaitEventsTimeout(double timeout)
 /// ```
 void glfwWaitEventsTimeout(double timeout) {
-  final _glfwWaitEventsTimeout = DLL_glfw3.lookupFunction<
+  final _glfwWaitEventsTimeout = libglfw3.lookupFunction<
       Void Function(Double timeout),
       void Function(double timeout)>('glfwWaitEventsTimeout');
   return _glfwWaitEventsTimeout(timeout);
@@ -2942,7 +2948,7 @@ void glfwWaitEventsTimeout(double timeout) {
 /// GLFWAPI void glfwPostEmptyEvent(void)
 /// ```
 void glfwPostEmptyEvent() {
-  final _glfwPostEmptyEvent = DLL_glfw3.lookupFunction<
+  final _glfwPostEmptyEvent = libglfw3.lookupFunction<
       Void Function(),
       void Function()>('glfwPostEmptyEvent');
   return _glfwPostEmptyEvent();
@@ -2975,7 +2981,7 @@ void glfwPostEmptyEvent() {
 /// GLFWAPI int glfwGetInputMode(GLFWwindow* window, int mode)
 /// ```
 int glfwGetInputMode(Pointer<GLFWwindow>? window, int mode) {
-  final _glfwGetInputMode = DLL_glfw3.lookupFunction<
+  final _glfwGetInputMode = libglfw3.lookupFunction<
       Int32 Function(Pointer<GLFWwindow>? window, Int32 mode),
       int Function(Pointer<GLFWwindow>? window, int mode)>('glfwGetInputMode');
   return _glfwGetInputMode(window, mode);
@@ -3045,7 +3051,7 @@ int glfwGetInputMode(Pointer<GLFWwindow>? window, int mode) {
 /// GLFWAPI void glfwSetInputMode(GLFWwindow* window, int mode, int value)
 /// ```
 void glfwSetInputMode(Pointer<GLFWwindow>? window, int mode, int value) {
-  final _glfwSetInputMode = DLL_glfw3.lookupFunction<
+  final _glfwSetInputMode = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Int32 mode, Int32 value),
       void Function(Pointer<GLFWwindow>? window, int mode, int value)>('glfwSetInputMode');
   return _glfwSetInputMode(window, mode, value);
@@ -3082,7 +3088,7 @@ void glfwSetInputMode(Pointer<GLFWwindow>? window, int mode, int value) {
 /// GLFWAPI int glfwRawMouseMotionSupported(void)
 /// ```
 int glfwRawMouseMotionSupported() {
-  final _glfwRawMouseMotionSupported = DLL_glfw3.lookupFunction<
+  final _glfwRawMouseMotionSupported = libglfw3.lookupFunction<
       Int32 Function(),
       int Function()>('glfwRawMouseMotionSupported');
   return _glfwRawMouseMotionSupported();
@@ -3158,7 +3164,7 @@ int glfwRawMouseMotionSupported() {
 /// GLFWAPI const char* glfwGetKeyName(int key, int scancode)
 /// ```
 String glfwGetKeyName(int key, int scancode) {
-  final _glfwGetKeyName = DLL_glfw3.lookupFunction<
+  final _glfwGetKeyName = libglfw3.lookupFunction<
       Pointer<Utf8>? Function(Int32 key, Int32 scancode),
       Pointer<Utf8>? Function(int key, int scancode)>('glfwGetKeyName');
   return _glfwGetKeyName(key, scancode)!.toDartString();
@@ -3190,7 +3196,7 @@ String glfwGetKeyName(int key, int scancode) {
 /// GLFWAPI int glfwGetKeyScancode(int key)
 /// ```
 int glfwGetKeyScancode(int key) {
-  final _glfwGetKeyScancode = DLL_glfw3.lookupFunction<
+  final _glfwGetKeyScancode = libglfw3.lookupFunction<
       Int32 Function(Int32 key),
       int Function(int key)>('glfwGetKeyScancode');
   return _glfwGetKeyScancode(key);
@@ -3201,8 +3207,7 @@ int glfwGetKeyScancode(int key) {
 /// 
 /// This function returns the last state reported for the specified key to the
 /// specified window.  The returned state is one of `GLFW_PRESS` or
-/// `GLFW_RELEASE`.  The higher-level action `GLFW_REPEAT` is only reported to
-/// the key callback.
+/// `GLFW_RELEASE`.  The action `GLFW_REPEAT` is only reported to the key callback.
 /// 
 /// If the @ref GLFW_STICKY_KEYS input mode is enabled, this function returns
 /// `GLFW_PRESS` the first time you call it for a key that was pressed, even if
@@ -3238,7 +3243,7 @@ int glfwGetKeyScancode(int key) {
 /// GLFWAPI int glfwGetKey(GLFWwindow* window, int key)
 /// ```
 int glfwGetKey(Pointer<GLFWwindow>? window, int key) {
-  final _glfwGetKey = DLL_glfw3.lookupFunction<
+  final _glfwGetKey = libglfw3.lookupFunction<
       Int32 Function(Pointer<GLFWwindow>? window, Int32 key),
       int Function(Pointer<GLFWwindow>? window, int key)>('glfwGetKey');
   return _glfwGetKey(window, key);
@@ -3275,7 +3280,7 @@ int glfwGetKey(Pointer<GLFWwindow>? window, int key) {
 /// GLFWAPI int glfwGetMouseButton(GLFWwindow* window, int button)
 /// ```
 int glfwGetMouseButton(Pointer<GLFWwindow>? window, int button) {
-  final _glfwGetMouseButton = DLL_glfw3.lookupFunction<
+  final _glfwGetMouseButton = libglfw3.lookupFunction<
       Int32 Function(Pointer<GLFWwindow>? window, Int32 button),
       int Function(Pointer<GLFWwindow>? window, int button)>('glfwGetMouseButton');
   return _glfwGetMouseButton(window, button);
@@ -3321,7 +3326,7 @@ int glfwGetMouseButton(Pointer<GLFWwindow>? window, int button) {
 /// GLFWAPI void glfwGetCursorPos(GLFWwindow* window, double* xpos, double* ypos)
 /// ```
 void glfwGetCursorPos(Pointer<GLFWwindow>? window, Pointer<Double>? xpos, Pointer<Double>? ypos) {
-  final _glfwGetCursorPos = DLL_glfw3.lookupFunction<
+  final _glfwGetCursorPos = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Double>? xpos, Pointer<Double>? ypos),
       void Function(Pointer<GLFWwindow>? window, Pointer<Double>? xpos, Pointer<Double>? ypos)>('glfwGetCursorPos');
   return _glfwGetCursorPos(window, xpos, ypos);
@@ -3369,7 +3374,7 @@ void glfwGetCursorPos(Pointer<GLFWwindow>? window, Pointer<Double>? xpos, Pointe
 /// GLFWAPI void glfwSetCursorPos(GLFWwindow* window, double xpos, double ypos)
 /// ```
 void glfwSetCursorPos(Pointer<GLFWwindow>? window, double xpos, double ypos) {
-  final _glfwSetCursorPos = DLL_glfw3.lookupFunction<
+  final _glfwSetCursorPos = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Double xpos, Double ypos),
       void Function(Pointer<GLFWwindow>? window, double xpos, double ypos)>('glfwSetCursorPos');
   return _glfwSetCursorPos(window, xpos, ypos);
@@ -3395,8 +3400,8 @@ void glfwSetCursorPos(Pointer<GLFWwindow>? window, double xpos, double ypos) {
 /// @return The handle of the created cursor, or `NULL` if an
 /// [error](@ref error_handling) occurred.
 /// 
-/// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
-/// GLFW_PLATFORM_ERROR.
+/// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+/// GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
 /// 
 /// @pointer_lifetime The specified image data is copied before this function
 /// returns.
@@ -3415,7 +3420,7 @@ void glfwSetCursorPos(Pointer<GLFWwindow>? window, double xpos, double ypos) {
 /// GLFWAPI GLFWcursor* glfwCreateCursor(const GLFWimage* image, int xhot, int yhot)
 /// ```
 Pointer<GLFWcursor>? glfwCreateCursor(Pointer<GLFWimage>? image, int xhot, int yhot) {
-  final _glfwCreateCursor = DLL_glfw3.lookupFunction<
+  final _glfwCreateCursor = libglfw3.lookupFunction<
       Pointer<GLFWcursor>? Function(Pointer<GLFWimage>? image, Int32 xhot, Int32 yhot),
       Pointer<GLFWcursor>? Function(Pointer<GLFWimage>? image, int xhot, int yhot)>('glfwCreateCursor');
   return _glfwCreateCursor(image, xhot, yhot);
@@ -3446,7 +3451,7 @@ Pointer<GLFWcursor>? glfwCreateCursor(Pointer<GLFWimage>? image, int xhot, int y
 /// GLFWAPI GLFWcursor* glfwCreateStandardCursor(int shape)
 /// ```
 Pointer<GLFWcursor>? glfwCreateStandardCursor(int shape) {
-  final _glfwCreateStandardCursor = DLL_glfw3.lookupFunction<
+  final _glfwCreateStandardCursor = libglfw3.lookupFunction<
       Pointer<GLFWcursor>? Function(Int32 shape),
       Pointer<GLFWcursor>? Function(int shape)>('glfwCreateStandardCursor');
   return _glfwCreateStandardCursor(shape);
@@ -3481,7 +3486,7 @@ Pointer<GLFWcursor>? glfwCreateStandardCursor(int shape) {
 /// GLFWAPI void glfwDestroyCursor(GLFWcursor* cursor)
 /// ```
 void glfwDestroyCursor(Pointer<GLFWcursor>? cursor) {
-  final _glfwDestroyCursor = DLL_glfw3.lookupFunction<
+  final _glfwDestroyCursor = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWcursor>? cursor),
       void Function(Pointer<GLFWcursor>? cursor)>('glfwDestroyCursor');
   return _glfwDestroyCursor(cursor);
@@ -3516,7 +3521,7 @@ void glfwDestroyCursor(Pointer<GLFWcursor>? cursor) {
 /// GLFWAPI void glfwSetCursor(GLFWwindow* window, GLFWcursor* cursor)
 /// ```
 void glfwSetCursor(Pointer<GLFWwindow>? window, Pointer<GLFWcursor>? cursor) {
-  final _glfwSetCursor = DLL_glfw3.lookupFunction<
+  final _glfwSetCursor = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<GLFWcursor>? cursor),
       void Function(Pointer<GLFWwindow>? window, Pointer<GLFWcursor>? cursor)>('glfwSetCursor');
   return _glfwSetCursor(window, cursor);
@@ -3574,7 +3579,7 @@ void glfwSetCursor(Pointer<GLFWwindow>? window, Pointer<GLFWcursor>? cursor) {
 /// GLFWAPI GLFWkeyfun glfwSetKeyCallback(GLFWwindow* window, GLFWkeyfun callback)
 /// ```
 GLFWkeyfun glfwSetKeyCallback(Pointer<GLFWwindow>? window, GLFWkeyfun callback) {
-  final _glfwSetKeyCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetKeyCallback = libglfw3.lookupFunction<
       GLFWkeyfun Function(Pointer<GLFWwindow>? window, GLFWkeyfun callback),
       GLFWkeyfun Function(Pointer<GLFWwindow>? window, GLFWkeyfun callback)>('glfwSetKeyCallback');
   return _glfwSetKeyCallback(window, callback);
@@ -3625,7 +3630,7 @@ GLFWkeyfun glfwSetKeyCallback(Pointer<GLFWwindow>? window, GLFWkeyfun callback) 
 /// GLFWAPI GLFWcharfun glfwSetCharCallback(GLFWwindow* window, GLFWcharfun callback)
 /// ```
 GLFWcharfun glfwSetCharCallback(Pointer<GLFWwindow>? window, GLFWcharfun callback) {
-  final _glfwSetCharCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetCharCallback = libglfw3.lookupFunction<
       GLFWcharfun Function(Pointer<GLFWwindow>? window, GLFWcharfun callback),
       GLFWcharfun Function(Pointer<GLFWwindow>? window, GLFWcharfun callback)>('glfwSetCharCallback');
   return _glfwSetCharCallback(window, callback);
@@ -3675,7 +3680,7 @@ GLFWcharfun glfwSetCharCallback(Pointer<GLFWwindow>? window, GLFWcharfun callbac
 /// GLFWAPI GLFWcharmodsfun glfwSetCharModsCallback(GLFWwindow* window, GLFWcharmodsfun callback)
 /// ```
 GLFWcharmodsfun glfwSetCharModsCallback(Pointer<GLFWwindow>? window, GLFWcharmodsfun callback) {
-  final _glfwSetCharModsCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetCharModsCallback = libglfw3.lookupFunction<
       GLFWcharmodsfun Function(Pointer<GLFWwindow>? window, GLFWcharmodsfun callback),
       GLFWcharmodsfun Function(Pointer<GLFWwindow>? window, GLFWcharmodsfun callback)>('glfwSetCharModsCallback');
   return _glfwSetCharModsCallback(window, callback);
@@ -3720,7 +3725,7 @@ GLFWcharmodsfun glfwSetCharModsCallback(Pointer<GLFWwindow>? window, GLFWcharmod
 /// GLFWAPI GLFWmousebuttonfun glfwSetMouseButtonCallback(GLFWwindow* window, GLFWmousebuttonfun callback)
 /// ```
 GLFWmousebuttonfun glfwSetMouseButtonCallback(Pointer<GLFWwindow>? window, GLFWmousebuttonfun callback) {
-  final _glfwSetMouseButtonCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetMouseButtonCallback = libglfw3.lookupFunction<
       GLFWmousebuttonfun Function(Pointer<GLFWwindow>? window, GLFWmousebuttonfun callback),
       GLFWmousebuttonfun Function(Pointer<GLFWwindow>? window, GLFWmousebuttonfun callback)>('glfwSetMouseButtonCallback');
   return _glfwSetMouseButtonCallback(window, callback);
@@ -3760,7 +3765,7 @@ GLFWmousebuttonfun glfwSetMouseButtonCallback(Pointer<GLFWwindow>? window, GLFWm
 /// GLFWAPI GLFWcursorposfun glfwSetCursorPosCallback(GLFWwindow* window, GLFWcursorposfun callback)
 /// ```
 GLFWcursorposfun glfwSetCursorPosCallback(Pointer<GLFWwindow>? window, GLFWcursorposfun callback) {
-  final _glfwSetCursorPosCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetCursorPosCallback = libglfw3.lookupFunction<
       GLFWcursorposfun Function(Pointer<GLFWwindow>? window, GLFWcursorposfun callback),
       GLFWcursorposfun Function(Pointer<GLFWwindow>? window, GLFWcursorposfun callback)>('glfwSetCursorPosCallback');
   return _glfwSetCursorPosCallback(window, callback);
@@ -3799,7 +3804,7 @@ GLFWcursorposfun glfwSetCursorPosCallback(Pointer<GLFWwindow>? window, GLFWcurso
 /// GLFWAPI GLFWcursorenterfun glfwSetCursorEnterCallback(GLFWwindow* window, GLFWcursorenterfun callback)
 /// ```
 GLFWcursorenterfun glfwSetCursorEnterCallback(Pointer<GLFWwindow>? window, GLFWcursorenterfun callback) {
-  final _glfwSetCursorEnterCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetCursorEnterCallback = libglfw3.lookupFunction<
       GLFWcursorenterfun Function(Pointer<GLFWwindow>? window, GLFWcursorenterfun callback),
       GLFWcursorenterfun Function(Pointer<GLFWwindow>? window, GLFWcursorenterfun callback)>('glfwSetCursorEnterCallback');
   return _glfwSetCursorEnterCallback(window, callback);
@@ -3841,7 +3846,7 @@ GLFWcursorenterfun glfwSetCursorEnterCallback(Pointer<GLFWwindow>? window, GLFWc
 /// GLFWAPI GLFWscrollfun glfwSetScrollCallback(GLFWwindow* window, GLFWscrollfun callback)
 /// ```
 GLFWscrollfun glfwSetScrollCallback(Pointer<GLFWwindow>? window, GLFWscrollfun callback) {
-  final _glfwSetScrollCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetScrollCallback = libglfw3.lookupFunction<
       GLFWscrollfun Function(Pointer<GLFWwindow>? window, GLFWscrollfun callback),
       GLFWscrollfun Function(Pointer<GLFWwindow>? window, GLFWscrollfun callback)>('glfwSetScrollCallback');
   return _glfwSetScrollCallback(window, callback);
@@ -3886,7 +3891,7 @@ GLFWscrollfun glfwSetScrollCallback(Pointer<GLFWwindow>? window, GLFWscrollfun c
 /// GLFWAPI GLFWdropfun glfwSetDropCallback(GLFWwindow* window, GLFWdropfun callback)
 /// ```
 GLFWdropfun glfwSetDropCallback(Pointer<GLFWwindow>? window, GLFWdropfun callback) {
-  final _glfwSetDropCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetDropCallback = libglfw3.lookupFunction<
       GLFWdropfun Function(Pointer<GLFWwindow>? window, GLFWdropfun callback),
       GLFWdropfun Function(Pointer<GLFWwindow>? window, GLFWdropfun callback)>('glfwSetDropCallback');
   return _glfwSetDropCallback(window, callback);
@@ -3918,7 +3923,7 @@ GLFWdropfun glfwSetDropCallback(Pointer<GLFWwindow>? window, GLFWdropfun callbac
 /// GLFWAPI int glfwJoystickPresent(int jid)
 /// ```
 int glfwJoystickPresent(int jid) {
-  final _glfwJoystickPresent = DLL_glfw3.lookupFunction<
+  final _glfwJoystickPresent = libglfw3.lookupFunction<
       Int32 Function(Int32 jid),
       int Function(int jid)>('glfwJoystickPresent');
   return _glfwJoystickPresent(jid);
@@ -3959,7 +3964,7 @@ int glfwJoystickPresent(int jid) {
 /// GLFWAPI const float* glfwGetJoystickAxes(int jid, int* count)
 /// ```
 Pointer<Float>? glfwGetJoystickAxes(int jid, Pointer<Int32>? count) {
-  final _glfwGetJoystickAxes = DLL_glfw3.lookupFunction<
+  final _glfwGetJoystickAxes = libglfw3.lookupFunction<
       Pointer<Float>? Function(Int32 jid, Pointer<Int32>? count),
       Pointer<Float>? Function(int jid, Pointer<Int32>? count)>('glfwGetJoystickAxes');
   return _glfwGetJoystickAxes(jid, count);
@@ -4008,7 +4013,7 @@ Pointer<Float>? glfwGetJoystickAxes(int jid, Pointer<Int32>? count) {
 /// GLFWAPI const unsigned char* glfwGetJoystickButtons(int jid, int* count)
 /// ```
 Pointer<Uint8>? glfwGetJoystickButtons(int jid, Pointer<Int32>? count) {
-  final _glfwGetJoystickButtons = DLL_glfw3.lookupFunction<
+  final _glfwGetJoystickButtons = libglfw3.lookupFunction<
       Pointer<Uint8>? Function(Int32 jid, Pointer<Int32>? count),
       Pointer<Uint8>? Function(int jid, Pointer<Int32>? count)>('glfwGetJoystickButtons');
   return _glfwGetJoystickButtons(jid, count);
@@ -4073,7 +4078,7 @@ Pointer<Uint8>? glfwGetJoystickButtons(int jid, Pointer<Int32>? count) {
 /// GLFWAPI const unsigned char* glfwGetJoystickHats(int jid, int* count)
 /// ```
 Pointer<Uint8>? glfwGetJoystickHats(int jid, Pointer<Int32>? count) {
-  final _glfwGetJoystickHats = DLL_glfw3.lookupFunction<
+  final _glfwGetJoystickHats = libglfw3.lookupFunction<
       Pointer<Uint8>? Function(Int32 jid, Pointer<Int32>? count),
       Pointer<Uint8>? Function(int jid, Pointer<Int32>? count)>('glfwGetJoystickHats');
   return _glfwGetJoystickHats(jid, count);
@@ -4112,7 +4117,7 @@ Pointer<Uint8>? glfwGetJoystickHats(int jid, Pointer<Int32>? count) {
 /// GLFWAPI const char* glfwGetJoystickName(int jid)
 /// ```
 String glfwGetJoystickName(int jid) {
-  final _glfwGetJoystickName = DLL_glfw3.lookupFunction<
+  final _glfwGetJoystickName = libglfw3.lookupFunction<
       Pointer<Utf8>? Function(Int32 jid),
       Pointer<Utf8>? Function(int jid)>('glfwGetJoystickName');
   return _glfwGetJoystickName(jid)!.toDartString();
@@ -4161,7 +4166,7 @@ String glfwGetJoystickName(int jid) {
 /// GLFWAPI const char* glfwGetJoystickGUID(int jid)
 /// ```
 String glfwGetJoystickGUID(int jid) {
-  final _glfwGetJoystickGUID = DLL_glfw3.lookupFunction<
+  final _glfwGetJoystickGUID = libglfw3.lookupFunction<
       Pointer<Utf8>? Function(Int32 jid),
       Pointer<Utf8>? Function(int jid)>('glfwGetJoystickGUID');
   return _glfwGetJoystickGUID(jid)!.toDartString();
@@ -4195,7 +4200,7 @@ String glfwGetJoystickGUID(int jid) {
 /// GLFWAPI void glfwSetJoystickUserPointer(int jid, void* pointer)
 /// ```
 void glfwSetJoystickUserPointer(int jid, Pointer<Void>? pointer) {
-  final _glfwSetJoystickUserPointer = DLL_glfw3.lookupFunction<
+  final _glfwSetJoystickUserPointer = libglfw3.lookupFunction<
       Void Function(Int32 jid, Pointer<Void>? pointer),
       void Function(int jid, Pointer<Void>? pointer)>('glfwSetJoystickUserPointer');
   return _glfwSetJoystickUserPointer(jid, pointer);
@@ -4227,7 +4232,7 @@ void glfwSetJoystickUserPointer(int jid, Pointer<Void>? pointer) {
 /// GLFWAPI void* glfwGetJoystickUserPointer(int jid)
 /// ```
 Pointer<Void>? glfwGetJoystickUserPointer(int jid) {
-  final _glfwGetJoystickUserPointer = DLL_glfw3.lookupFunction<
+  final _glfwGetJoystickUserPointer = libglfw3.lookupFunction<
       Pointer<Void>? Function(Int32 jid),
       Pointer<Void>? Function(int jid)>('glfwGetJoystickUserPointer');
   return _glfwGetJoystickUserPointer(jid);
@@ -4263,7 +4268,7 @@ Pointer<Void>? glfwGetJoystickUserPointer(int jid) {
 /// GLFWAPI int glfwJoystickIsGamepad(int jid)
 /// ```
 int glfwJoystickIsGamepad(int jid) {
-  final _glfwJoystickIsGamepad = DLL_glfw3.lookupFunction<
+  final _glfwJoystickIsGamepad = libglfw3.lookupFunction<
       Int32 Function(Int32 jid),
       int Function(int jid)>('glfwJoystickIsGamepad');
   return _glfwJoystickIsGamepad(jid);
@@ -4307,7 +4312,7 @@ int glfwJoystickIsGamepad(int jid) {
 /// GLFWAPI GLFWjoystickfun glfwSetJoystickCallback(GLFWjoystickfun callback)
 /// ```
 GLFWjoystickfun glfwSetJoystickCallback(GLFWjoystickfun callback) {
-  final _glfwSetJoystickCallback = DLL_glfw3.lookupFunction<
+  final _glfwSetJoystickCallback = libglfw3.lookupFunction<
       GLFWjoystickfun Function(GLFWjoystickfun callback),
       GLFWjoystickfun Function(GLFWjoystickfun callback)>('glfwSetJoystickCallback');
   return _glfwSetJoystickCallback(callback);
@@ -4349,7 +4354,7 @@ GLFWjoystickfun glfwSetJoystickCallback(GLFWjoystickfun callback) {
 /// GLFWAPI int glfwUpdateGamepadMappings(const char* string)
 /// ```
 int glfwUpdateGamepadMappings(String string) {
-  final _glfwUpdateGamepadMappings = DLL_glfw3.lookupFunction<
+  final _glfwUpdateGamepadMappings = libglfw3.lookupFunction<
       Int32 Function(Pointer<Utf8>? string),
       int Function(Pointer<Utf8>? string)>('glfwUpdateGamepadMappings');
   final _stringPointer = string.toNativeUtf8();
@@ -4373,6 +4378,8 @@ int glfwUpdateGamepadMappings(String string) {
 /// joystick is not present, does not have a mapping or an
 /// [error](@ref error_handling) occurred.
 /// 
+/// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref GLFW_INVALID_ENUM.
+/// 
 /// @pointer_lifetime The returned string is allocated and freed by GLFW.  You
 /// should not free it yourself.  It is valid until the specified joystick is
 /// disconnected, the gamepad mappings are updated or the library is terminated.
@@ -4390,7 +4397,7 @@ int glfwUpdateGamepadMappings(String string) {
 /// GLFWAPI const char* glfwGetGamepadName(int jid)
 /// ```
 String glfwGetGamepadName(int jid) {
-  final _glfwGetGamepadName = DLL_glfw3.lookupFunction<
+  final _glfwGetGamepadName = libglfw3.lookupFunction<
       Pointer<Utf8>? Function(Int32 jid),
       Pointer<Utf8>? Function(int jid)>('glfwGetGamepadName');
   return _glfwGetGamepadName(jid)!.toDartString();
@@ -4436,7 +4443,7 @@ String glfwGetGamepadName(int jid) {
 /// GLFWAPI int glfwGetGamepadState(int jid, GLFWgamepadstate* state)
 /// ```
 int glfwGetGamepadState(int jid, Pointer<GLFWgamepadstate>? state) {
-  final _glfwGetGamepadState = DLL_glfw3.lookupFunction<
+  final _glfwGetGamepadState = libglfw3.lookupFunction<
       Int32 Function(Int32 jid, Pointer<GLFWgamepadstate>? state),
       int Function(int jid, Pointer<GLFWgamepadstate>? state)>('glfwGetGamepadState');
   return _glfwGetGamepadState(jid, state);
@@ -4469,7 +4476,7 @@ int glfwGetGamepadState(int jid, Pointer<GLFWgamepadstate>? state) {
 /// GLFWAPI void glfwSetClipboardString(GLFWwindow* window, const char* string)
 /// ```
 void glfwSetClipboardString(Pointer<GLFWwindow>? window, String string) {
-  final _glfwSetClipboardString = DLL_glfw3.lookupFunction<
+  final _glfwSetClipboardString = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window, Pointer<Utf8>? string),
       void Function(Pointer<GLFWwindow>? window, Pointer<Utf8>? string)>('glfwSetClipboardString');
   final _stringPointer = string.toNativeUtf8();
@@ -4489,8 +4496,8 @@ void glfwSetClipboardString(Pointer<GLFWwindow>? window, String string) {
 /// @return The contents of the clipboard as a UTF-8 encoded string, or `NULL`
 /// if an [error](@ref error_handling) occurred.
 /// 
-/// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
-/// GLFW_PLATFORM_ERROR.
+/// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+/// GLFW_FORMAT_UNAVAILABLE and @ref GLFW_PLATFORM_ERROR.
 /// 
 /// @pointer_lifetime The returned string is allocated and freed by GLFW.  You
 /// should not free it yourself.  It is valid until the next call to @ref
@@ -4510,7 +4517,7 @@ void glfwSetClipboardString(Pointer<GLFWwindow>? window, String string) {
 /// GLFWAPI const char* glfwGetClipboardString(GLFWwindow* window)
 /// ```
 String glfwGetClipboardString(Pointer<GLFWwindow>? window) {
-  final _glfwGetClipboardString = DLL_glfw3.lookupFunction<
+  final _glfwGetClipboardString = libglfw3.lookupFunction<
       Pointer<Utf8>? Function(Pointer<GLFWwindow>? window),
       Pointer<Utf8>? Function(Pointer<GLFWwindow>? window)>('glfwGetClipboardString');
   return _glfwGetClipboardString(window)!.toDartString();
@@ -4548,7 +4555,7 @@ String glfwGetClipboardString(Pointer<GLFWwindow>? window) {
 /// GLFWAPI double glfwGetTime(void)
 /// ```
 double glfwGetTime() {
-  final _glfwGetTime = DLL_glfw3.lookupFunction<
+  final _glfwGetTime = libglfw3.lookupFunction<
       Double Function(),
       double Function()>('glfwGetTime');
   return _glfwGetTime();
@@ -4586,7 +4593,7 @@ double glfwGetTime() {
 /// GLFWAPI void glfwSetTime(double time)
 /// ```
 void glfwSetTime(double time) {
-  final _glfwSetTime = DLL_glfw3.lookupFunction<
+  final _glfwSetTime = libglfw3.lookupFunction<
       Void Function(Double time),
       void Function(double time)>('glfwSetTime');
   return _glfwSetTime(time);
@@ -4616,7 +4623,7 @@ void glfwSetTime(double time) {
 /// GLFWAPI uint64_t glfwGetTimerValue(void)
 /// ```
 int glfwGetTimerValue() {
-  final _glfwGetTimerValue = DLL_glfw3.lookupFunction<
+  final _glfwGetTimerValue = libglfw3.lookupFunction<
       Uint64 Function(),
       int Function()>('glfwGetTimerValue');
   return _glfwGetTimerValue();
@@ -4644,7 +4651,7 @@ int glfwGetTimerValue() {
 /// GLFWAPI uint64_t glfwGetTimerFrequency(void)
 /// ```
 int glfwGetTimerFrequency() {
-  final _glfwGetTimerFrequency = DLL_glfw3.lookupFunction<
+  final _glfwGetTimerFrequency = libglfw3.lookupFunction<
       Uint64 Function(),
       int Function()>('glfwGetTimerFrequency');
   return _glfwGetTimerFrequency();
@@ -4690,7 +4697,7 @@ int glfwGetTimerFrequency() {
 /// GLFWAPI void glfwMakeContextCurrent(GLFWwindow* window)
 /// ```
 void glfwMakeContextCurrent(Pointer<GLFWwindow>? window) {
-  final _glfwMakeContextCurrent = DLL_glfw3.lookupFunction<
+  final _glfwMakeContextCurrent = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwMakeContextCurrent');
   return _glfwMakeContextCurrent(window);
@@ -4719,7 +4726,7 @@ void glfwMakeContextCurrent(Pointer<GLFWwindow>? window) {
 /// GLFWAPI GLFWwindow* glfwGetCurrentContext(void)
 /// ```
 Pointer<GLFWwindow>? glfwGetCurrentContext() {
-  final _glfwGetCurrentContext = DLL_glfw3.lookupFunction<
+  final _glfwGetCurrentContext = libglfw3.lookupFunction<
       Pointer<GLFWwindow>? Function(),
       Pointer<GLFWwindow>? Function()>('glfwGetCurrentContext');
   return _glfwGetCurrentContext();
@@ -4761,7 +4768,7 @@ Pointer<GLFWwindow>? glfwGetCurrentContext() {
 /// GLFWAPI void glfwSwapBuffers(GLFWwindow* window)
 /// ```
 void glfwSwapBuffers(Pointer<GLFWwindow>? window) {
-  final _glfwSwapBuffers = DLL_glfw3.lookupFunction<
+  final _glfwSwapBuffers = libglfw3.lookupFunction<
       Void Function(Pointer<GLFWwindow>? window),
       void Function(Pointer<GLFWwindow>? window)>('glfwSwapBuffers');
   return _glfwSwapBuffers(window);
@@ -4815,7 +4822,7 @@ void glfwSwapBuffers(Pointer<GLFWwindow>? window) {
 /// GLFWAPI void glfwSwapInterval(int interval)
 /// ```
 void glfwSwapInterval(int interval) {
-  final _glfwSwapInterval = DLL_glfw3.lookupFunction<
+  final _glfwSwapInterval = libglfw3.lookupFunction<
       Void Function(Int32 interval),
       void Function(int interval)>('glfwSwapInterval');
   return _glfwSwapInterval(interval);
@@ -4861,7 +4868,7 @@ void glfwSwapInterval(int interval) {
 /// GLFWAPI int glfwExtensionSupported(const char* extension)
 /// ```
 int glfwExtensionSupported(String extension) {
-  final _glfwExtensionSupported = DLL_glfw3.lookupFunction<
+  final _glfwExtensionSupported = libglfw3.lookupFunction<
       Int32 Function(Pointer<Utf8>? extension),
       int Function(Pointer<Utf8>? extension)>('glfwExtensionSupported');
   final _extensionPointer = extension.toNativeUtf8();
@@ -4914,7 +4921,7 @@ int glfwExtensionSupported(String extension) {
 /// GLFWAPI GLFWglproc glfwGetProcAddress(const char* procname)
 /// ```
 GLFWglproc glfwGetProcAddress(String procname) {
-  final _glfwGetProcAddress = DLL_glfw3.lookupFunction<
+  final _glfwGetProcAddress = libglfw3.lookupFunction<
       GLFWglproc Function(Pointer<Utf8>? procname),
       GLFWglproc Function(Pointer<Utf8>? procname)>('glfwGetProcAddress');
   final _procnamePointer = procname.toNativeUtf8();
@@ -4928,13 +4935,11 @@ GLFWglproc glfwGetProcAddress(String procname) {
 /// This function returns whether the Vulkan loader and any minimally functional
 /// ICD have been found.
 /// 
-/// The availability of a Vulkan loader and even an ICD does not by itself
-/// guarantee that surface creation or even instance creation is possible.
-/// For example, on Fermi systems Nvidia will install an ICD that provides no
-/// actual Vulkan support.  Call @ref glfwGetRequiredInstanceExtensions to check
-/// whether the extensions necessary for Vulkan surface creation are available
-/// and @ref glfwGetPhysicalDevicePresentationSupport to check whether a queue
-/// family of a physical device supports image presentation.
+/// The availability of a Vulkan loader and even an ICD does not by itself guarantee that
+/// surface creation or even instance creation is possible.  Call @ref
+/// glfwGetRequiredInstanceExtensions to check whether the extensions necessary for Vulkan
+/// surface creation are available and @ref glfwGetPhysicalDevicePresentationSupport to
+/// check whether a queue family of a physical device supports image presentation.
 /// 
 /// @return `GLFW_TRUE` if Vulkan is minimally available, or `GLFW_FALSE`
 /// otherwise.
@@ -4953,7 +4958,7 @@ GLFWglproc glfwGetProcAddress(String procname) {
 /// GLFWAPI int glfwVulkanSupported(void)
 /// ```
 int glfwVulkanSupported() {
-  final _glfwVulkanSupported = DLL_glfw3.lookupFunction<
+  final _glfwVulkanSupported = libglfw3.lookupFunction<
       Int32 Function(),
       int Function()>('glfwVulkanSupported');
   return _glfwVulkanSupported();
@@ -4988,10 +4993,6 @@ int glfwVulkanSupported() {
 /// returned array, as it is an error to specify an extension more than once in
 /// the `VkInstanceCreateInfo` struct.
 /// 
-/// @remark @macos This function currently supports either the
-/// `VK_MVK_macos_surface` extension from MoltenVK or `VK_EXT_metal_surface`
-/// extension.
-/// 
 /// @pointer_lifetime The returned array is allocated and freed by GLFW.  You
 /// should not free it yourself.  It is guaranteed to be valid only until the
 /// library is terminated.
@@ -5009,7 +5010,7 @@ int glfwVulkanSupported() {
 /// GLFWAPI const char** glfwGetRequiredInstanceExtensions(uint32_t* count)
 /// ```
 Pointer<Pointer<Utf8>>? glfwGetRequiredInstanceExtensions(Pointer<Uint32>? count) {
-  final _glfwGetRequiredInstanceExtensions = DLL_glfw3.lookupFunction<
+  final _glfwGetRequiredInstanceExtensions = libglfw3.lookupFunction<
       Pointer<Pointer<Utf8>>? Function(Pointer<Uint32>? count),
       Pointer<Pointer<Utf8>>? Function(Pointer<Uint32>? count)>('glfwGetRequiredInstanceExtensions');
   return _glfwGetRequiredInstanceExtensions(count);
@@ -5058,7 +5059,7 @@ Pointer<Pointer<Utf8>>? glfwGetRequiredInstanceExtensions(Pointer<Uint32>? count
 /// GLFWAPI GLFWvkproc glfwGetInstanceProcAddress(VkInstance instance, const char* procname)
 /// ```
 GLFWvkproc glfwGetInstanceProcAddress(Pointer<Void>? instance, String procname) {
-  final _glfwGetInstanceProcAddress = DLL_glfw3.lookupFunction<
+  final _glfwGetInstanceProcAddress = libglfw3.lookupFunction<
       GLFWvkproc Function(Pointer<Void>? instance, Pointer<Utf8>? procname),
       GLFWvkproc Function(Pointer<Void>? instance, Pointer<Utf8>? procname)>('glfwGetInstanceProcAddress');
   final _procnamePointer = procname.toNativeUtf8();
@@ -5090,7 +5091,7 @@ GLFWvkproc glfwGetInstanceProcAddress(Pointer<Void>? instance, String procname) 
 /// GLFW_API_UNAVAILABLE and @ref GLFW_PLATFORM_ERROR.
 /// 
 /// @remark @macos This function currently always returns `GLFW_TRUE`, as the
-/// `VK_MVK_macos_surface` extension does not provide
+/// `VK_MVK_macos_surface` and `VK_EXT_metal_surface` extensions do not provide
 /// a `vkGetPhysicalDevice*PresentationSupport` type function.
 /// 
 /// @thread_safety This function may be called from any thread.  For
@@ -5106,7 +5107,7 @@ GLFWvkproc glfwGetInstanceProcAddress(Pointer<Void>? instance, String procname) 
 /// GLFWAPI int glfwGetPhysicalDevicePresentationSupport(VkInstance instance, VkPhysicalDevice device, uint32_t queuefamily)
 /// ```
 int glfwGetPhysicalDevicePresentationSupport(Pointer<Void>? instance, Pointer<Void>? device, int queuefamily) {
-  final _glfwGetPhysicalDevicePresentationSupport = DLL_glfw3.lookupFunction<
+  final _glfwGetPhysicalDevicePresentationSupport = libglfw3.lookupFunction<
       Int32 Function(Pointer<Void>? instance, Pointer<Void>? device, Uint32 queuefamily),
       int Function(Pointer<Void>? instance, Pointer<Void>? device, int queuefamily)>('glfwGetPhysicalDevicePresentationSupport');
   return _glfwGetPhysicalDevicePresentationSupport(instance, device, queuefamily);
@@ -5155,8 +5156,10 @@ int glfwGetPhysicalDevicePresentationSupport(Pointer<Void>? instance, Pointer<Vo
 /// @ref glfwVulkanSupported and @ref glfwGetRequiredInstanceExtensions should
 /// eliminate almost all occurrences of these errors.
 /// 
-/// @remark @macos This function currently only supports the
-/// `VK_MVK_macos_surface` extension from MoltenVK.
+/// @remark @macos GLFW prefers the `VK_EXT_metal_surface` extension, with the
+/// `VK_MVK_macos_surface` extension as a fallback.  The name of the selected
+/// extension, if any, is included in the array returned by @ref
+/// glfwGetRequiredInstanceExtensions.
 /// 
 /// @remark @macos This function creates and sets a `CAMetalLayer` instance for
 /// the window content view, which is required for MoltenVK to function.
@@ -5175,7 +5178,7 @@ int glfwGetPhysicalDevicePresentationSupport(Pointer<Void>? instance, Pointer<Vo
 /// GLFWAPI VkResult glfwCreateWindowSurface(VkInstance instance, GLFWwindow* window, const VkAllocationCallbacks* allocator, VkSurfaceKHR* surface)
 /// ```
 Pointer<Void>? glfwCreateWindowSurface(Pointer<Void>? instance, Pointer<GLFWwindow>? window, Pointer<Void>? allocator, Pointer<Void>? surface) {
-  final _glfwCreateWindowSurface = DLL_glfw3.lookupFunction<
+  final _glfwCreateWindowSurface = libglfw3.lookupFunction<
       Pointer<Void>? Function(Pointer<Void>? instance, Pointer<GLFWwindow>? window, Pointer<Void>? allocator, Pointer<Void>? surface),
       Pointer<Void>? Function(Pointer<Void>? instance, Pointer<GLFWwindow>? window, Pointer<Void>? allocator, Pointer<Void>? surface)>('glfwCreateWindowSurface');
   return _glfwCreateWindowSurface(instance, window, allocator, surface);
