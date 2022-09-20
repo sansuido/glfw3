@@ -3,11 +3,11 @@ import 'package:ffi/ffi.dart';
 import 'package:glfw3/glfw3.dart';
 
 void windowPosCallback(Pointer<GLFWwindow>? window, int xpos, int ypos) {
-  print('windowPosCallback: ' + 'xpos=${xpos} ypos=${ypos}');
+  print('windowPosCallback: ' 'xpos=$xpos ypos=$ypos');
 }
 
 void windowSizeCallback(Pointer<GLFWwindow>? window, int width, int height) {
-  print('windowSizeCallback: ' + 'width=${width} height=${height}');
+  print('windowSizeCallback: ' 'width=$width height=$height');
 }
 
 void windowCloseCallback(Pointer<GLFWwindow>? window) {
@@ -19,27 +19,27 @@ void windowRefreshCallback(Pointer<GLFWwindow>? window) {
 }
 
 void windowFocusCallback(Pointer<GLFWwindow>? window, int focused) {
-  print('windowFocusCallback: ' + 'focused=$focused');
+  print('windowFocusCallback: ' 'focused=$focused');
 }
 
 void windowIconifyCallback(Pointer<GLFWwindow>? window, int iconified) {
-  print('windowIconifyCallback: ' + 'iconified=$iconified');
+  print('windowIconifyCallback: ' 'iconified=$iconified');
 }
 
 void windowMaximizeCallback(Pointer<GLFWwindow>? window, int maximized) {
-  print('windowMaximizeCallback: ' + 'maximized=$maximized');
+  print('windowMaximizeCallback: ' 'maximized=$maximized');
 }
 
 void framebufferSizeCallback(Pointer<GLFWwindow>? window, int width, int height) {
-  print('framebufferSizeCallback: ' + 'width=${width} height=${height}');
+  print('framebufferSizeCallback: ' 'width=$width height=$height');
 }
 
 void windowContentScaleCallback(Pointer<GLFWwindow>? window, double xscale, double yscale) {
-  print('windowContentScaleCallback: ' + 'xscale=${xscale} yscale=${yscale}');
+  print('windowContentScaleCallback: ' 'xscale=$xscale yscale=$yscale');
 }
 
 void mouseButtonCallback(Pointer<GLFWwindow>? window, int button, int action, int mods) {
-  print('mouseCallback: ' + 'button=$button action=$action mods=$mods');
+  print('mouseCallback: ' 'button=$button action=$action mods=$mods');
 }
 
 void cursorPosCallback(Pointer<GLFWwindow>? window, double xpos, double ypos) {
@@ -55,22 +55,22 @@ void scrollCallback(Pointer<GLFWwindow>? window, double xoffset, double yoffset)
 }
 
 void keyCallback(Pointer<GLFWwindow>? window, int key, int scancode, int action, int mods) {
-  print('keyCallback: ' + 'key=$key scancode=$scancode action=$action mods=$mods');
+  print('keyCallback: ' 'key=$key scancode=$scancode action=$action mods=$mods');
 }
 
 void charCallback(Pointer<GLFWwindow>? window, int codepoint) {
-  print('charCallback: codepoint=' + String.fromCharCode(codepoint));
+  print('charCallback: codepoint=${String.fromCharCode(codepoint)}');
 }
 
 void charModsCallback(Pointer<GLFWwindow>? window, int codepoint, int mods) {
-  print('charModsCallback: codepoint=' + String.fromCharCode(codepoint) + ' mods=$mods');
+  print('charModsCallback: codepoint=${String.fromCharCode(codepoint)} mods=$mods');
 
 }
 
 void dropCallback(Pointer<GLFWwindow>? window, int pathCount, Pointer<Pointer<Utf8>>? paths) {
   for (var i = 0; i < pathCount; i++) {
     var path = paths!.elementAt(i).value;
-    print('dropCallback: path[$i]=' + path.toDartString());
+    print('dropCallback: path[$i]=${path.toDartString()}');
   }
 }
 

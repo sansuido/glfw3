@@ -1,4 +1,5 @@
 // THIS FILE IS GENERATED AUTOMATICALLY AND SHOULD NOT BE EDITED DIRECTLY.
+// ignore_for_file: constant_identifier_names
 //const _glfw3_h_ = ;
 //const _WIN32 = ;
 //const APIENTRY = __stdcall;

@@ -1,3 +1,6 @@
+## 1.1.1
+- [update] Functions and structs follow lint rules.
+
 ## 1.1.0
 - [update] Support glfw version 3.3.8.
 - [update] Support multi platform.

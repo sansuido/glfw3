@@ -1,5 +1,6 @@
 // THIS FILE IS GENERATED AUTOMATICALLY AND SHOULD NOT BE EDITED DIRECTLY.
 import 'dart:ffi';
+
 class GLFWmonitor extends Opaque {}
 
 class GLFWwindow extends Opaque {}
@@ -37,6 +38,9 @@ class GLFWgammaramp extends Struct {
   // [24]+(4)
   @Uint32()
   external int size;
+  // [] +(4)
+  @Uint32()
+  external int blank_1;
 }
 
 class GLFWimage extends Struct {
@@ -82,7 +86,10 @@ class GLFWgamepadstate extends Struct {
   external int buttons_14;
   @Uint8()
   external int buttons_15;
-  // [15]+(4*6)
+  // [] +(1)
+  @Uint8()
+  external int blank_1;
+  // [16]+(4*6)
   @Float()
   external double axes_1;
   @Float()
@@ -96,4 +103,3 @@ class GLFWgamepadstate extends Struct {
   @Float()
   external double axes_6;
 }
-
