@@ -1,3 +1,6 @@
+## 1.1.2
+- [update]  Rewrite a pointer to be non-nullable.
+
 ## 1.1.1
 - [update] Functions and structs follow lint rules.
 

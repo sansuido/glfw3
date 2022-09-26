@@ -30,11 +30,11 @@ class GLFWvidmode extends Struct {
 
 class GLFWgammaramp extends Struct {
   // [0]+(8)
-  external Pointer<Uint16>? red;
+  external Pointer<Uint16> red;
   // [8]+(8)
-  external Pointer<Uint16>? green;
+  external Pointer<Uint16> green;
   // [16]+(8)
-  external Pointer<Uint16>? blue;
+  external Pointer<Uint16> blue;
   // [24]+(4)
   @Uint32()
   external int size;
@@ -51,7 +51,7 @@ class GLFWimage extends Struct {
   @Int32()
   external int height;
   // [8]+(8)
-  external Pointer<Uint8>? pixels;
+  external Pointer<Uint8> pixels;
 }
 
 class GLFWgamepadstate extends Struct {
