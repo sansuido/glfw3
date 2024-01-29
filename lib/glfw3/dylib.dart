@@ -2,7 +2,7 @@ import 'dart:ffi';
 import 'dart:io';
 
 /// @nodoc
-DynamicLibrary dylibOpen(String mark) {
+DynamicLibrary dylibOpen(String mark, String version) {
   var header = '';
   var extension = '';
   switch (Platform.operatingSystem) {
@@ -19,7 +19,7 @@ DynamicLibrary dylibOpen(String mark) {
       break;
     case 'windows':
       header = '';
-      extension = '.dll';
+      extension = '$version.dll';
       break;
   }
   return DynamicLibrary.open(header + mark + extension);

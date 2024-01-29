@@ -1,13 +1,13 @@
 // THIS FILE IS GENERATED AUTOMATICALLY AND SHOULD NOT BE EDITED DIRECTLY.
 import 'dart:ffi';
 
-class GLFWmonitor extends Opaque {}
+final class GLFWmonitor extends Opaque {}
 
-class GLFWwindow extends Opaque {}
+final class GLFWwindow extends Opaque {}
 
-class GLFWcursor extends Opaque {}
+final class GLFWcursor extends Opaque {}
 
-class GLFWvidmode extends Struct {
+final class GLFWvidmode extends Struct {
   // [0]+(4)
   @Int32()
   external int width;
@@ -28,7 +28,7 @@ class GLFWvidmode extends Struct {
   external int refreshRate;
 }
 
-class GLFWgammaramp extends Struct {
+final class GLFWgammaramp extends Struct {
   // [0]+(8)
   external Pointer<Uint16> red;
   // [8]+(8)
@@ -43,7 +43,7 @@ class GLFWgammaramp extends Struct {
   external int blank_1;
 }
 
-class GLFWimage extends Struct {
+final class GLFWimage extends Struct {
   // [0]+(4)
   @Int32()
   external int width;
@@ -54,7 +54,7 @@ class GLFWimage extends Struct {
   external Pointer<Uint8> pixels;
 }
 
-class GLFWgamepadstate extends Struct {
+final class GLFWgamepadstate extends Struct {
   // [0]+(1*15)
   @Uint8()
   external int buttons_1;
