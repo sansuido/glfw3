@@ -69,7 +69,7 @@ void charModsCallback(Pointer<GLFWwindow> window, int codepoint, int mods) {
 
 void dropCallback(Pointer<GLFWwindow> window, int pathCount, Pointer<Pointer<Utf8>> paths) {
   for (var i = 0; i < pathCount; i++) {
-    var path = paths.elementAt(i).value;
+    var path = (paths + i).value;
     print('dropCallback: path[$i]=${path.toDartString()}');
   }
 }

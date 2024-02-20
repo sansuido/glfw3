@@ -3,7 +3,7 @@ glfw3 for Dart
 
 # Requirement
 
-* ffi ^2.1.0
+* ffi ^2.1.2
 
 # Note
 

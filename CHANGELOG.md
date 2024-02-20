@@ -1,7 +1,11 @@
+## 1.2.1
+- [update] Removed deprecated `elementAt`. (Require Dart 3.3.0)
+- [update] Support ffi ^2.1.2.
+
 ## 1.2.0
 - [update] Support glfw version 3.3.9.
 - [update] Support dart version 3.
-- [fix] Revised static library references for each platform.
+- [update] Revised static library references for each platform.
 
 ## 1.1.2
 - [update] Rewrite a pointer to be non-nullable.
